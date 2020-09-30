@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/Users/macbook/Downloads/PTIT/A&amp;D/code/Lab1/lib" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/Users/macbook/Downloads/TheAnh/PTIT/A&amp;D/code/Lab1/lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
@@ -9,7 +9,9 @@
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
 		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
 		<item value="false" key="updateTextualMatches"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>

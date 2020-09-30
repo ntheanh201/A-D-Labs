@@ -1,5 +1,0 @@
-package net.login.database;
-
-public class LoginDao {
-
-}
