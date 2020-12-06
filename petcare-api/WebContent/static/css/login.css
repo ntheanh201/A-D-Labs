@@ -1,0 +1,271 @@
+:root {
+  --main-color: #1b2a47;
+  --secondary-color: #707070;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.barber-bgr {
+  background-image: url("../image/pet.jpg");
+  height: 100vh;
+  width: 65%;
+}
+
+.main-content,
+a {
+  color: var(--main-color);
+}
+
+.main-content {
+  font-family: "Roboto", sans-serif;
+}
+
+.row {
+  display: flex;
+  overflow: hidden;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 0 15px;
+  margin: 0;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.login-page {
+  padding: 2rem;
+  position: relative;
+}
+
+.content-header {
+  text-align: right;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.content-container {
+  padding: 0 4rem;
+}
+
+.content-body .branding {
+  display: flex;
+  align-items: center;
+}
+
+.content-body .branding img {
+  width: 40px;
+  height: 40px;
+}
+
+.content-body .branding span {
+  margin-left: 6px;
+  color: var(--secondary-color);
+  font-size: 25px;
+}
+
+.content-body .title {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+
+.content-body .login-form {
+  width: 100%;
+  overflow: hidden;
+}
+
+.content-body .login-form input {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #d4d4d4;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+}
+
+.content-body .login-form input::placeholder {
+  color: var(--secondary-color);
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.content-body .login-form input:focus {
+  outline: none;
+  color: var(--secondary-color);
+}
+
+.content-body .forgot-password {
+  text-align: right;
+  font-size: 14px;
+}
+
+.content-body .external-signin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary-color);
+}
+
+.content-body .external-signin-title .external-title {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+}
+
+.content-body .external-signin-title .wing {
+  border-bottom: 0.5px solid #d4d4d4;
+  height: 0;
+  width: 120px;
+}
+
+.content-body .extern-button {
+  margin-top: 10px;
+}
+
+.content-footer {
+  text-align: center;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.content-footer span {
+  color: var(--secondary-color);
+}
+.btn {
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+}
+.btn:hover {
+  border: 1px solid var(--main-color);
+  color: #fff;
+  background-color: var(--main-color);
+}
+.btn-external {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  padding: 0.5rem 3rem;
+}
+.btn-external span {
+  margin-left: 6px;
+}
+.btn-fb {
+  margin-left: 8px;
+}
+.btn-submit {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 1px solid var(--main-color);
+  width: 100%;
+  padding: 1rem;
+  margin: 25px 0;
+  font-size: 16px;
+}
+.btn-submit:hover {
+  color: var(--main-color);
+  background-color: #fff;
+  border: 1px solid var(--main-color);
+}
+.btn-get-barber {
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-weight: 500;
+}
+.extern-button {
+  display: flex;
+  justify-content: space-between;
+}
+.rounded {
+  background-color: var(--secondary-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.forgot-password a {
+  text-decoration: none;
+}
+.forgot-password a:hover {
+  color: var(--secondary-color);
+}
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 992px) {
+  .barber-bgr {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .barber-bgr {
+    width: 300px;
+  }
+  .login-page {
+    padding: 10px;
+  }
+
+  .content-container {
+    padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .row {
+    flex-direction: column;
+  }
+  .barber-bgr {
+    width: 100%;
+    height: 200px;
+  }
+  .login-page {
+    padding: 40px 30px;
+  }
+  .content-container {
+    padding: 0;
+  }
+  .extern-button {
+    flex-direction: column;
+  }
+  .btn-fb {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .btn-external {
+    padding: 1rem;
+  }
+  .content-body {
+    padding: 20px 0;
+  }
+  .content-body .external-signin-title .wing {
+    width: 120px;
+  }
+  .content-header {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  .content-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+  }
+}

@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="net.employeemanagement.dao.EmployeeDao"/>
-<fullyQualifiedTypeName name="net.employeemanagement.model.Employee"/>
-<fullyQualifiedTypeName name="net.login.database.LoginDao"/>
+    <fullyQualifiedTypeName name="net.employeemanagement.dao.EmployeeDao"/>
+    <fullyQualifiedTypeName name="net.employeemanagement.model.Employee"/>
+    <fullyQualifiedTypeName name="net.login.database.LoginDao"/>
+    <fullyQualifiedTypeName name="model.Department"/>
+    <fullyQualifiedTypeName name="controller.dao.DAODepartment"/>
+    <fullyQualifiedTypeName name="view.DepartmentView"/>
+    <fullyQualifiedTypeName name="controller.DepartmentControl"/>
+    <fullyQualifiedTypeName name="controller.dao.DAOTimeKeeper"/>
+    <fullyQualifiedTypeName name="model.Timekeeper"/>
+    <fullyQualifiedTypeName name="view.TimeKeeperView"/>
+    <fullyQualifiedTypeName name="controller.TimeKeeperControl"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletMapping"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="model.LoginModel"/>
+    <fullyQualifiedTypeName name="util.Hasher"/>
+    <fullyQualifiedTypeName name="model.Customer"/>
+    <fullyQualifiedTypeName name="dao.CustomerDao"/>
+    <fullyQualifiedTypeName name="dao.impl.CustomerDaoImpl"/>
+    <fullyQualifiedTypeName name="model.Admin"/>
+    <fullyQualifiedTypeName name="dao.AdminDao"/>
+    <fullyQualifiedTypeName name="dao.impl.AdminDaoImpl"/>
+    <fullyQualifiedTypeName name="dao.ShipperDao"/>
+    <fullyQualifiedTypeName name="dao.impl.ShipperDaoImpl"/>
+    <fullyQualifiedTypeName name="model.Shipper"/>
+    <fullyQualifiedTypeName name="entities.Person"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 </qualifiedTypeNameHistroy>

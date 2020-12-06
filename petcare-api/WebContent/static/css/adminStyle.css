@@ -1,0 +1,9 @@
+
+.form-add-product{
+  width: 70%;
+  padding: 20px;
+  margin: 20px auto;
+}
+.form-add-product .file-image {
+  height: 46px;
+}

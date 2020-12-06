@@ -1,0 +1,213 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    /* line-height: 1.15; */
+    text-size-adjust: 100%;
+}
+
+.contain {
+    position: relative;
+    padding: 0px;
+    margin: 0px auto;
+    width: 900px;
+}
+
+.form-common {
+    margin: 10px 0px;
+    background: rgb(248, 248, 248);
+    display: flex;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.form-common .content-left {
+    width: 360px;
+    padding: 45px 30px;
+    background: rgb(255, 255, 255);
+    border-radius: 6px 0px 0px 6px;
+    overflow: hidden;
+    float: left;
+}
+
+.form-common .content-right {
+    width: calc(100% - 390px);
+    margin: 50px 20px 20px 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 0px 6px 6px 0px;
+    float: left;
+}
+
+
+.content-left h2 {
+    font-size: 32px;
+    font-weight: 300;
+    color: rgb(36, 36, 36);
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+h2 {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.content-left p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.38;
+    color: rgb(120, 120, 120);
+    margin: 0px 0px 10px ;
+    /* line-height: 1.5; */
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+div {
+    display: block;
+}
+
+.form-item input[type^="text"], .form-item input[type^="password"] {
+    width: 65%;
+}
+
+.input-item {
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, -webkit-box-shadow 0.15s ease-in-out 0s;
+    border: 1px solid rgb(132, 53, 52);
+    border-radius: 4px;
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 34px;
+    outline: none;
+}
+
+.form {
+    display: block;
+    margin-top: 0em;
+}
+
+.form-item {
+    font-size: 13px;
+    margin: 10px 20px 20px;
+}
+
+.form-item>label {
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+    width: 25%;
+    display: inline-block;
+}
+
+.content-left img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    border-style: none;
+}
+
+element.style {
+    padding-left: 100px;
+}
+
+.form-input .input-login .forgot-password {
+    margin: 20px 1px 30px;
+    font-size: 12px;
+}
+
+.form-input .userbutton {
+    color: rgb(74, 74, 74);
+    background: rgb(253, 216, 53);
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    border: 0px;
+    padding: 0px;
+    font-size: 14px;
+    border-radius: 4px;
+    user-select: none;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 41px;
+    line-height: 41px;
+}
+
+button, input {
+    appearance: button;
+    text-transform: none;
+    font-family: inherit;
+    margin: 0px;
+   
+}
+
+.button-login-with-facebook {
+    font-weight: 400;
+    text-align: center;
+    border: 0px;
+    white-space: nowrap;
+    padding: 0px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 41px;
+    line-height: 41px;
+    background: rgb(59, 89, 152);
+    color: rgb(255, 255, 255)
+}
+
+.button-face {
+    float: left;
+    height: 41px;
+    width: 41px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.fab.fa-facebook-square {
+    background-image: url(../img/sprite.png?v=100000000);
+    background-position: -290px -288px;
+    width: 45px;
+    height: 24px;
+}
+
+.button-login-with-google {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    border: 0px;
+    white-space: nowrap;
+    padding: 0px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 90%;
+    height: 41px;
+    line-height: 41px;
+    background: rgb(223, 74, 50);
+    color: rgb(255, 255, 255);
+}
+
+.button-google {
+    float: left;
+    height: 41px;
+    width: 41px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.fab.fa-google-plus-g {
+    background-image: url(../img/sprite.png?v=100000000);
+    background-position: -290px -288px;
+    width: 45px;
+    height: 24px;
+}
+

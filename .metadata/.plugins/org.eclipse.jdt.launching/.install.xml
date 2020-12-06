@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-<entry loc="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home" stamp="1595954377000"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home" stamp="1595954377000"/>
+    <entry loc="/Users/macbook/Library/Java/JavaVirtualMachines/openjdk-15.0.1/Contents/Home" stamp="1605519060602"/>
+    <entry loc="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" stamp="1605521363294"/>
 </dirs>
