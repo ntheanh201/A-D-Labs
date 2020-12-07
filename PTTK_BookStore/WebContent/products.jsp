@@ -23,7 +23,7 @@
             } 
         </style>
     </head>
-    <body style="background-color: azure; height: 200px"">
+    <bodytyle="background-color: azure; height: 200px"">
         <jsp:include page="/common/header.jsp"></jsp:include>
         <jsp:include page="/items.jsp"></jsp:include>
     </body>

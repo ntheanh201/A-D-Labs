@@ -19,7 +19,7 @@ public class Cart implements Serializable {
     
     private List<Item> itemList;
     
-    private List<Orderline> orderlineList;
+    private List<OrderDetail> orderlineList;
     
     private List<Customer> customerList;
 
@@ -65,11 +65,11 @@ public class Cart implements Serializable {
     }
 
     
-    public List<Orderline> getOrderlineList() {
+    public List<OrderDetail> getOrderlineList() {
         return orderlineList;
     }
 
-    public void setOrderlineList(List<Orderline> orderlineList) {
+    public void setOrderlineList(List<OrderDetail> orderlineList) {
         this.orderlineList = orderlineList;
     }
 

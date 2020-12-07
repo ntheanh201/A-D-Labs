@@ -8,7 +8,7 @@ import java.util.List;
 public class Item implements Serializable {
 
     private List<Cart> cartList;
-    private List<Orderline> orderlineList;
+    private List<OrderDetail> orderlineList;
 
     private static final long serialVersionUID = 1L;
     private Integer id;
@@ -104,11 +104,11 @@ public class Item implements Serializable {
         this.cartList = cartList;
     }
 
-    public List<Orderline> getOrderlineList() {
+    public List<OrderDetail> getOrderlineList() {
         return orderlineList;
     }
 
-    public void setOrderlineList(List<Orderline> orderlineList) {
+    public void setOrderlineList(List<OrderDetail> orderlineList) {
         this.orderlineList = orderlineList;
     }
     

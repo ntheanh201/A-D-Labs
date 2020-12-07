@@ -3,7 +3,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Orderline implements Serializable {
+public class OrderDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -13,10 +13,10 @@ public class Orderline implements Serializable {
     private Item itemID;    
     private Onlineorder orderID;
 
-    public Orderline() {
+    public OrderDetail() {
     }
 
-    public Orderline(Integer id) {
+    public OrderDetail(Integer id) {
         this.id = id;
     }
 

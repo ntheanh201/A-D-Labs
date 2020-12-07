@@ -10,7 +10,7 @@ html, body {
 }
 </style>
 </head>
-<body style="background-color: azure; height: 200px">
+<bodytyle="background-color: azure; height: 200px">
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<h1 style="margin-left: 300px; color: red">Register now for your
 		First-Super-Discount!</h1>

@@ -2,9 +2,9 @@
 <%@page import="java.util.Locale"%>
 <%@page import="model.Item"%>
 <%@page import="dao.impl.ItemDAOImpl"%>
-<%@page import="model.Orderline"%>
+<%@page import="model.OrderDetail"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.OrderlineDAOImpl"%>
+<%@page import="dao.impl.OrderDetailDAOImpl"%>
 <%@page import="model.Onlineorder"%>
 <%@page import="dao.impl.OnlineOrderDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,16 +14,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Handle Orders</title>
 </head>
-<body style="background-color: azure;">
+<body>
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<div style="margin-left: 20%">
 		<%
 			OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
-		OrderlineDAOImpl orderlineDAOImpl = new OrderlineDAOImpl();
-		List<Orderline> list = orderlineDAOImpl.getAll();
-		Locale localeVN = new Locale("vi", "VN");
-		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
-		long total = 0;
+				OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
+				List<OrderDetail> list = orderlineDAOImpl.getAll();
+				Locale localeVN = new Locale("vi", "VN");
+				NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+				long total = 0;
 		%>
 		<br>
 		<table>
@@ -34,8 +34,8 @@
 				<td>Price</td>
 			</tr>
 			<%
-				for (Orderline i : list) {
-				total += Long.parseLong(i.getItemID().getSalePrice().toString());
+				for (OrderDetail i : list) {
+					total += Long.parseLong(i.getItemID().getSalePrice().toString());
 			%>
 			<tr>
 				<td><%=i.getOrderID().getOrderID()%></td>

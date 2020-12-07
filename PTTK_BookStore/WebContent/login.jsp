@@ -11,7 +11,7 @@
       }
     </style>
   </head>
-  <body style="background-color: azure">
+  <body>
     <jsp:include page="/common/header.jsp"></jsp:include>
     <form
       action="login"

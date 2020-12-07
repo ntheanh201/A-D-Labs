@@ -9,7 +9,7 @@
 <%@page import="dao.impl.ItemDAOImpl"%>
 <%@page import="entities.Orderline"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.OrderlineDAOImpl"%>
+<%@page import="dao.impl.OrderDetailDAOImpl"%>
 <%@page import="entities.Onlineorder"%>
 <%@page import="dao.impl.OnlineOrderDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -53,31 +53,39 @@
                     <input type="image" style="width: 50px; height: 40px; float: left" src="resources/searchbtn.png">
                 </form>
             </div>
-            <% if (session.getAttribute("customerID") == null) { %>
+            <%
+            	if (session.getAttribute("customerID") == null) {
+            %>
             <div style="float: left; margin-left: 100px; margin-top: 50px;">
                 <a href="login.jsp" style="font-size: 24px; text-decoration: none; font-weight: bold; color: darkcyan">Login</a>
                 <br>
                 No account? <a href="register.jsp" style="color: red">Register Now!</a>    
             </div>
-            <% } else {%>
+            <%
+            	} else {
+            %>
             <div style="float: left; margin-left: 100px; margin-top: 50px;">
-                Hello <%= session.getAttribute("name")%>
+                Hello <%=session.getAttribute("name")%>
                 <a href="/book-store/logout.jsp">Logout</a>
                 <br>
-                <% String mainPage = "stafflogin.jsp?customerID=" + session.getAttribute("customerID") + "&name=" + session.getAttribute("name");%>
-                <a href="<%= mainPage%>">Go to main page</a>
+                <%
+                	String mainPage = "stafflogin.jsp?customerID=" + session.getAttribute("customerID") + "&name=" + session.getAttribute("name");
+                %>
+                <a href="<%=mainPage%>">Go to main page</a>
             </div>
-            <% }%>
+            <%
+            	}
+            %>
         </div>
         <div style="margin-left: 20%">
             <%
-                OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
-                Onlineorder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID")));
-                OrderlineDAOImpl orderlineDAOImpl = new OrderlineDAOImpl();
-                List<Orderline> list = orderlineDAOImpl.getOrderLinesByOrderId(Integer.parseInt(request.getParameter("orderID")));
-                Locale localeVN = new Locale("vi", "VN");
-                NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
-                long total = 0;
+            	OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
+                            Onlineorder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID")));
+                            OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
+                            List<Orderline> list = orderlineDAOImpl.getOrderLinesByOrderId(Integer.parseInt(request.getParameter("orderID")));
+                            Locale localeVN = new Locale("vi", "VN");
+                            NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+                            long total = 0;
             %>
             <br>
             <div><span style="font-weight: bold">Order ID:</span> <span style="color: firebrick"><%= onlineorder.getOrderID()%></span></div>

@@ -2,9 +2,9 @@
 <%@page import="java.util.Locale"%>
 <%@page import="model.Item"%>
 <%@page import="dao.impl.ItemDAOImpl"%>
-<%@page import="model.Orderline"%>
+<%@page import="model.OrderDetail"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.OrderlineDAOImpl"%>
+<%@page import="dao.impl.OrderDetailDAOImpl"%>
 <%@page import="model.Onlineorder"%>
 <%@page import="dao.impl.OnlineOrderDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,14 +24,14 @@ html, body {
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<div>
 	<%
-			OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
+		OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
 		Onlineorder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID")));
-		OrderlineDAOImpl orderlineDAOImpl = new OrderlineDAOImpl();
-		List<Orderline> list = orderlineDAOImpl.getOrderLinesByOrderId(Integer.parseInt(request.getParameter("orderID")));
+		OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
+		List<OrderDetail> list = orderlineDAOImpl.getOrderLinesByOrderId(Integer.parseInt(request.getParameter("orderID")));
 		Locale localeVN = new Locale("vi", "VN");
- 		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+		 		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
 		long total = 0;
-		%>
+	%>
 		<br>
 		<div>
 			<span style="font-weight: bold">Order ID:</span> <span

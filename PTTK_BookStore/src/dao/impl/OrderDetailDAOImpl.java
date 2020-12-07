@@ -12,23 +12,23 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import dao.OrderlineDAO;
+import dao.OrderDetailDAO;
 import model.Onlineorder;
-import model.Orderline;
+import model.OrderDetail;
 
 
-public class OrderlineDAOImpl implements OrderlineDAO{
+public class OrderDetailDAOImpl implements OrderDetailDAO{
 
     @Override
-    public List<Orderline> getAll() {
-    	List<Orderline> list = new ArrayList<>();
+    public List<OrderDetail> getAll() {
+    	List<OrderDetail> list = new ArrayList<>();
         ItemDAOImpl aOImpl = new ItemDAOImpl();
         String sql = "Select * from book_store.orderline ORDER BY OrderID";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Orderline o = new Orderline();
+                OrderDetail o = new OrderDetail();
                 o.setId(rs.getInt("ID"));
                 o.setItemID(aOImpl.get(rs.getInt("ItemID")));
                 o.setOrderID(new Onlineorder(rs.getInt("OrderID")));
@@ -38,18 +38,18 @@ public class OrderlineDAOImpl implements OrderlineDAO{
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OrderlineDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrderDetailDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
 
     @Override
-    public Orderline get(int id) {
+    public OrderDetail get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public List<Orderline> getOrderLinesByOrderId(int orderID) {
-    	List<Orderline> list = new ArrayList<>();
+    public List<OrderDetail> getOrderLinesByOrderId(int orderID) {
+    	List<OrderDetail> list = new ArrayList<>();
         ItemDAOImpl aOImpl = new ItemDAOImpl();
         String sql = "Select * from book_store.orderline where OrderID = ?";
         try {
@@ -58,7 +58,7 @@ public class OrderlineDAOImpl implements OrderlineDAO{
             ResultSet rs = ps.executeQuery();
             //rs.first();
             while (rs.next()) {
-                Orderline o = new Orderline();
+                OrderDetail o = new OrderDetail();
                 o.setId(rs.getInt("ID"));
                 o.setItemID(aOImpl.get(rs.getInt("ItemID")));
                 o.setOrderID(new Onlineorder(orderID));
@@ -68,13 +68,13 @@ public class OrderlineDAOImpl implements OrderlineDAO{
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(OrderlineDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrderDetailDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
     
     @Override
-    public int save(Orderline t) {
+    public int save(OrderDetail t) {
         System.out.println(t);
         String sql = "INSERT INTO book_store.orderline (orderID, itemID)"
                 + " VALUES(?,?);";
@@ -103,16 +103,16 @@ public class OrderlineDAOImpl implements OrderlineDAO{
         return key;}
 
     @Override
-    public void update(Orderline t) {
+    public void update(OrderDetail t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Orderline t) {
+    public void delete(OrderDetail t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public static void main(String[] args) {
-        System.out.println(new OrderlineDAOImpl().getOrderLinesByOrderId(1));
+        System.out.println(new OrderDetailDAOImpl().getOrderLinesByOrderId(1));
     }
 }

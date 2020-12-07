@@ -11,7 +11,7 @@
       }
     </style>
   </head>
-  <body style="background-color: azure">
+  <body>
     <jsp:include page="/common/header.jsp"></jsp:include>
     <h1 style="margin-left: 300px">How will you pay?</h1>
     <div style="margin-left: 30%; width: 20%; text-align: right">

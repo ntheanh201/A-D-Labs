@@ -2,19 +2,23 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Book Store | HomePage</title>
+    <title>Book Store Online</title>
   </head>
-  <body style="background-color: azure">
+  <body>
     <jsp:include page="/common/header.jsp"></jsp:include>
     <div style="margin-left: 20%">
-      <h1>Book Store Customer Page</h1>
-      <br />
-      <a href="cart.jsp"
-        ><button><span>View Your Cart</span></button></a
-      >
+      <h1>Customer Dashboard</h1>
       <br />
       <a href="products.jsp"
-        ><button><span>View All Items In Store</span></button></a
+        ><button>
+          <span>All Items</span>
+        </button></a
+      >
+      <br />
+      <a href="cart.jsp"
+        ><button>
+          <span>Cart</span>
+        </button></a
       >
     </div>
   </body>

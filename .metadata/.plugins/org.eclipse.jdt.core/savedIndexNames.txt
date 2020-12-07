@@ -31,7 +31,6 @@ INDEX VERSION 1.131+/Users/macbook/Downloads/TheAnh/Documents/workspace/.metadat
 1994881670.index
 152269218.index
 491110722.index
-1756461749.index
 1187276522.index
 1238492654.index
 860289472.index

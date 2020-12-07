@@ -12,11 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.impl.ItemDAOImpl;
 import dao.impl.OnlineOrderDAOImpl;
-import dao.impl.OrderlineDAOImpl;
+import dao.impl.OrderDetailDAOImpl;
 import dao.impl.VoucherDAOImpl;
 import model.Item;
 import model.Onlineorder;
-import model.Orderline;
+import model.OrderDetail;
 import model.Shippingaddress;
 import model.Voucher;
 
@@ -69,9 +69,9 @@ public class CreateOrderServlet extends HttpServlet {
 		ItemDAOImpl itemDAOImpl = new ItemDAOImpl();
 		List<Item> items = itemDAOImpl.findItemInCart(customerID);
 
-		OrderlineDAOImpl orderlineDAOImpl = new OrderlineDAOImpl();
+		OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
 		for (Item i : items) {
-			Orderline o1 = new Orderline();
+			OrderDetail o1 = new OrderDetail();
 			o1.setItemID(i);
 			o1.setOrderID(o);
 			orderlineDAOImpl.save(o1);
