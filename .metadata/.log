@@ -6746,3 +6746,21 @@ java.io.IOException: Unable to resolve plug-in "org.eclipse.mylyn.tasks.ui".
 
 !ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 03:10:22.578
 !MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 09:29:05.005
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 09:29:05.007
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 09:29:05.008
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 09:29:06.214
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 09:29:06.214
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-12-07 09:29:06.215
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT

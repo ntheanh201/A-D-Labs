@@ -1,19 +1,9 @@
-
 package model;
 
 import java.io.Serializable;
 import java.util.List;
 
 
-
-@Entity
-@Table(name = "author")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Author.findAll", query = "SELECT a FROM Author a"),
-    @NamedQuery(name = "Author.findById", query = "SELECT a FROM Author a WHERE a.id = :id"),
-    @NamedQuery(name = "Author.findByName", query = "SELECT a FROM Author a WHERE a.name = :name"),
-    @NamedQuery(name = "Author.findByDescription", query = "SELECT a FROM Author a WHERE a.description = :description")})
 public class Author implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,7 +12,6 @@ public class Author implements Serializable {
     
     private String name;
     private String description;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "authorID")
     private List<Book> bookList;
 
     public Author() {

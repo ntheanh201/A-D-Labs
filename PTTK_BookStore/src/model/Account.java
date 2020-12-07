@@ -7,9 +7,9 @@ import java.util.List;
 public class Account implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    
     private Integer id;
     private String username;
-    
     private String password;
     private String role;
     private List<Person> personList;
