@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ItemDAOImpl;
+import dao.impl.ItemDAOImpl;
 
 public class ImageServlet extends HttpServlet {
 

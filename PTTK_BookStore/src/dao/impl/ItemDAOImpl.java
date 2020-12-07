@@ -1,5 +1,5 @@
 
-package dao;
+package dao.impl;
 
 import static dao.BaseDAO.con;
 
@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import dao.impl.AccountDAOImpl;
+import dao.ItemDAO;
 import model.Item;
 
 

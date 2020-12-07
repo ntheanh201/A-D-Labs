@@ -49,7 +49,7 @@ public class OnlineOrderServlet extends HttpServlet {
 			Onlineorder a = aOImpl.searchOnlineOrders(Integer.parseInt(orderID));
 			a.setState(request.getParameter("method").toString());
 			aOImpl.update(a);
-			response.sendRedirect("onlineorder.jsp?orderID=" + request.getParameter("orderID"));
+			response.sendRedirect("processorder.jsp?orderID=" + request.getParameter("orderID"));
 		} catch (SQLException ex) {
 			Logger.getLogger(OnlineOrderServlet.class.getName()).log(Level.SEVERE, null, ex);
 		}

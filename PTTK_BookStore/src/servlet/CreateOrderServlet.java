@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ItemDAOImpl;
+import dao.impl.ItemDAOImpl;
 import dao.impl.OnlineOrderDAOImpl;
 import dao.impl.OrderlineDAOImpl;
 import dao.impl.VoucherDAOImpl;

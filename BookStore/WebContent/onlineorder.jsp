@@ -6,7 +6,7 @@
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.util.Locale"%>
 <%@page import="entities.Item"%>
-<%@page import="dao.ItemDAOImpl"%>
+<%@page import="dao.impl.ItemDAOImpl"%>
 <%@page import="entities.Orderline"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.impl.OrderlineDAOImpl"%>

@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import dao.ItemDAOImpl;
 import dao.OrderlineDAO;
 import model.Onlineorder;
 import model.Orderline;
@@ -22,7 +21,27 @@ public class OrderlineDAOImpl implements OrderlineDAO{
 
     @Override
     public List<Orderline> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	List<Orderline> list = new ArrayList<>();
+        ItemDAOImpl aOImpl = new ItemDAOImpl();
+        String sql = "Select * from book_store.orderline";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            //rs.first();
+            while (rs.next()) {
+                Orderline o = new Orderline();
+                o.setId(rs.getInt("ID"));
+                o.setItemID(aOImpl.get(rs.getInt("ItemID")));
+                o.setOrderID(new Onlineorder(rs.getInt("OrderID")));
+                o.setQuantity(rs.getInt("Quantity"));
+                System.out.println(o);
+                list.add(o);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderlineDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
     }
 
     @Override
@@ -31,7 +50,7 @@ public class OrderlineDAOImpl implements OrderlineDAO{
     }
 
     public List<Orderline> getOrderLinesByOrderId(int orderID) {
-        List<Orderline> list = new ArrayList<>();
+    	List<Orderline> list = new ArrayList<>();
         ItemDAOImpl aOImpl = new ItemDAOImpl();
         String sql = "Select * from book_store.orderline where OrderID = ?";
         try {

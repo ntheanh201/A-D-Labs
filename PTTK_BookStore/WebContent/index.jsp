@@ -1,3 +1,8 @@
+<%@page import="model.Category"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.impl.CategoryDAOImpl"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,30 +24,19 @@ html, body {
 			<div
 				style="width: 100%; height: 10%; background-color: burlywood; font-weight: bold; font-size: 40px; text-decoration: overline;">
 				Category</div>
+			<%
+				CategoryDAOImpl categoryDAO = new CategoryDAOImpl();
+                List<Category> categories = categoryDAO.getAll();
+                for (int i = 0; i < categories.size(); i++) {
+
+                    int stt = i + 1;
+                    Category cate = categories.get(i);
+            %>
 			<div
 				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Literature & Fiction</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Romance</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Crime & Thriller</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Children & Young Adult</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Sci-fi & Fantasy</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Business & Economics</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Biographies & Memoirs</div>
-			<div
-				style="width: 100%; height: 10%; border: 1px solid white; background-color: cadetblue; font-family: monospace;">
-				Indian Writing</div>
+				<%= cate.getName()%></div>
+			<%}
+            %>
 		</div>
 		<div style="width: 60%; height: 100%; float: left">
 			<div style="height: 70%">

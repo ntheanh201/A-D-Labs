@@ -43,34 +43,17 @@ th {
 <title>Book Store</title>
 </head>
 <body style="background-color: azure;">
-
+	<jsp:include page="/common/header.jsp"></jsp:include>
 	<div style="margin-left: 20%">
 		<%
 			OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
-		Onlineorder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID")));
+		/* Onlineorder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID"))); */
 		OrderlineDAOImpl orderlineDAOImpl = new OrderlineDAOImpl();
-		List<Orderline> list = orderlineDAOImpl.getOrderLinesByOrderId(Integer.parseInt(request.getParameter("orderID")));
+		List<Orderline> list = orderlineDAOImpl.getAll();
 		Locale localeVN = new Locale("vi", "VN");
 		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
 		long total = 0;
 		%>
-		<br>
-		<div>
-			<span style="font-weight: bold">Order ID:</span> <span
-				style="color: firebrick"><%=onlineorder.getOrderID()%></span>
-		</div>
-		<div>
-			<span style="font-weight: bold">Customer ID:</span> <span
-				style="color: firebrick"><%=onlineorder.getCustomerID()%></span>
-		</div>
-		<div>
-			<span style="font-weight: bold">Payment method:</span> <span
-				style="color: firebrick"><%=onlineorder.getPaymentmethod()%></span>
-		</div>
-		<div>
-			<span style="font-weight: bold">State:</span> <span
-				style="color: firebrick"><%=onlineorder.getState()%></span>
-		</div>
 		<br>
 		<table>
 			<tr>
@@ -95,21 +78,11 @@ th {
 			Total:
 			<%=currencyVN.format(total)%></p>
 		<br>
-		<form action="OnlineOrderServlet" method="POST">
-			<input type="text" name="orderID"
-				value="<%=request.getParameter("orderID")%>" hidden="true" />
-			<div>
-				<select name="method" onchange="">
-					<option value="Wait for payment">Wait for payment</option>
-					<option value="Getting in stock">Getting in stock</option>
-					<option value="On Delivery">On Delivery</option>
-					<option value="Accepted">Accepted</option>
-					<option value="Canceled">Canceled</option>
-				</select> <input name="ItemID" hidden="true"
-					value="<%=onlineorder.getOrderID()%>">
-			</div>
-			<input type="submit" name="button1" value="Update">
-
+		<form action="processorder.jsp" method="GET"
+			style="margin-left: 35%; margin-top: 10%">
+			<input type="text" name="orderID" style="margin-left: 3%"
+				placeholder="Insert Order ID..."> <input type="submit"
+				style="margin-left: 3%" value="Search">
 		</form>
 
 	</div>

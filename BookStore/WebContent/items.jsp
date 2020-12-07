@@ -10,7 +10,7 @@
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="entities.Item"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.ItemDAOImpl"%>
+<%@page import="dao.impl.ItemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -2,7 +2,7 @@
 <%@page import="java.util.Locale"%>
 <%@page import="model.Item"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.ItemDAOImpl"%>
+<%@page import="dao.impl.ItemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,7 +56,7 @@
         <div id="makeOrder">
             <p style="font-weight: bold">Total: <%= currencyVN.format(total)%></p>
             <br>
-            <a href="getShippingAddress.jsp"><button>Make Order</button></a>
+            <a href="shipping-address.jsp"><button>Make Order</button></a>
         </div>
     </body>
 </html>

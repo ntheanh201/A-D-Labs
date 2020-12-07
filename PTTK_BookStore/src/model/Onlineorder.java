@@ -83,26 +83,6 @@ public class Onlineorder implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (orderID != null ? orderID.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Onlineorder)) {
-            return false;
-        }
-        Onlineorder other = (Onlineorder) object;
-        if ((this.orderID == null && other.orderID != null) || (this.orderID != null && !this.orderID.equals(other.orderID))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "Onlineorder{" + "state=" + state + ", customerID=" + customerID + ", orderID=" + orderID + ", shippingID=" + shippingID + ", paymentmethod=" + paymentmethod + ", shippingAddressID=" + shippingAddressID + ", voucherID=" + voucherID + '}';
     }

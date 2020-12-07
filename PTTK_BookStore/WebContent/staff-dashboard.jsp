@@ -1,13 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<%
-	//        String urlCart = "cart.jsp?customerID="+request.getParameter("customerID");
-String urlCart = "cart.jsp";
-String urlItems = "cart.jsp?customerID=" + request.getParameter("customerID");
-session.setAttribute("customerID", request.getParameter("customerID"));
-session.setAttribute("name", request.getParameter("name"));
-%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Staff login</title>
@@ -64,7 +57,7 @@ button:hover span:after {
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<div style="margin-left: 20%">
 		<h1>Book Store Staff Page</h1>
-		<br> <a href="processorder.jsp" id="cart"><button>
+		<br> <a href="all-orders.jsp" id="cart"><button>
 				<span>Process Order</span>
 			</button></a>
 	</div>
