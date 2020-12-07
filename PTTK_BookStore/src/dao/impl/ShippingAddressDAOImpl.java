@@ -10,23 +10,40 @@ import java.sql.Statement;
 import java.util.List;
 
 import dao.ShippingAddressDAO;
-import model.Shippingaddress;
+import model.Address;
+import model.ShippingAdd;
 
 
 public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 
     @Override
-    public List<Shippingaddress> getAll() {
+    public List<ShippingAdd> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Shippingaddress get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ShippingAdd get(int id) {
+    	String sql = "SELECT * FROM shippingaddress WHERE ID = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            ShippingAdd item = new ShippingAdd();
+            AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
+
+            while (rs.next()) {
+                item.setId(rs.getInt("ID"));
+                item.setNote(rs.getString("Note"));
+                item.setAddressID(addressDAOImpl.get(rs.getInt("addressID")));
+            }
+            return item;
+        } catch (SQLException ex) {
+            return null;
+        }
     }
 
     @Override
-    public int save(Shippingaddress t) {
+    public int save(ShippingAdd t) {
         String sql = "INSERT INTO book_store.shippingaddress (note, addressid)"
                 + "VALUES(?,?);";
         int key = -1;
@@ -55,12 +72,12 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
     }
 
     @Override
-    public void update(Shippingaddress t) {
+    public void update(ShippingAdd t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Shippingaddress t) {
+    public void delete(ShippingAdd t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

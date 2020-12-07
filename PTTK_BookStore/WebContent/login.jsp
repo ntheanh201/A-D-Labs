@@ -26,7 +26,7 @@
       <input type="password" name="password" style="margin-left: 31px" />
       <br />
       <br />
-      <input type="submit" style="margin-left: 15%" />
+      <input type="submit" style="margin-left: 15%" value="Login" />
     </form>
   </body>
 </html>

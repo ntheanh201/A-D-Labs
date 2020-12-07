@@ -8,6 +8,9 @@
 		<item key="wrap" value="true"/>
 		<item key="wholeword" value="false"/>
 		<list key="findhistory">
+			<item value="shippingaddressID"/>
+			<item value="cart"/>
+			<item value="#cart"/>
 			<item value="fe"/>
 			<item value=""/>
 		</list>

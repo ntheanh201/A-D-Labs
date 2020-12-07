@@ -3,21 +3,17 @@ package dao.impl;
 
 import static dao.BaseDAO.con;
 
-import java.math.BigInteger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import dao.CustomerDAO;
 import model.Cart;
 import model.Customer;
-import model.Item;
 
 
 public class CustomerDAOImpl implements CustomerDAO {

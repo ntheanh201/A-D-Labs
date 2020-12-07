@@ -4,7 +4,7 @@ package model;
 import java.io.Serializable;
 import java.util.List;
 
-public class Shippingaddress implements Serializable {
+public class ShippingAdd implements Serializable {
 
     private List<Onlineorder> onlineorderList;
 
@@ -14,10 +14,10 @@ public class Shippingaddress implements Serializable {
     private String note;
     private Address addressID;
 
-    public Shippingaddress() {
+    public ShippingAdd() {
     }
 
-    public Shippingaddress(Integer id) {
+    public ShippingAdd(Integer id) {
         this.id = id;
     }
 
@@ -55,10 +55,10 @@ public class Shippingaddress implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Shippingaddress)) {
+        if (!(object instanceof ShippingAdd)) {
             return false;
         }
-        Shippingaddress other = (Shippingaddress) object;
+        ShippingAdd other = (ShippingAdd) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

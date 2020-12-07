@@ -12,7 +12,7 @@ import java.util.List;
 import dao.OnlineOrderDAO;
 import model.Item;
 import model.Onlineorder;
-import model.Shippingaddress;
+import model.ShippingAdd;
 import model.Voucher;
 
 
@@ -28,7 +28,7 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Onlineorder searchOnlineOrders(int orderId) throws SQLException {
+    public Onlineorder searchOnlineOrders(int orderId) throws SQLException, ClassNotFoundException {
         Onlineorder re = new Onlineorder();
         String sql = "SELECT * FROM book_store.onlineorder WHERE OrderID = ? ";
         PreparedStatement ps = con.prepareStatement(sql);
@@ -38,7 +38,7 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
         re.setCustomerID(rs.getInt("CustomerID"));
         re.setPaymentmethod(rs.getString("paymentmethod"));
         re.setOrderID(orderId);
-        re.setShippingAddressID(new Shippingaddress(rs.getInt("shippingaddressID")));
+        re.setShippingAddressID(new ShippingAdd(rs.getInt("ShippingAddressID")));
         re.setState(rs.getString("State"));
         re.setVoucherID(new Voucher(rs.getInt("VoucherID")));
         return re;
@@ -68,7 +68,7 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
                 if (generatedKeys.next()) {
                     key = generatedKeys.getInt(1);
                 } else {
-                    throw new SQLException("Creating user failed, no ID obtained.");
+                    throw new SQLException("Creating order failed, no ID obtained.");
                 }
             }
         } catch (SQLException ex) {
@@ -111,14 +111,14 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
                 affectedRows += ps.executeUpdate();
 
                 if (affectedRows == 0) {
-                    throw new SQLException("Creating user failed, no rows affected.");
+                    throw new SQLException("Creating order failed, no rows affected.");
                 }
 
                 try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
                         key = generatedKeys.getInt(1);
                     } else {
-                        throw new SQLException("Creating user failed, no ID obtained.");
+                        throw new SQLException("Creating order failed, no ID obtained.");
                     }
                 }
             } catch (SQLException ex) {

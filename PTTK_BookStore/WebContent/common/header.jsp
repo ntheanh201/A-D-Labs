@@ -3,16 +3,15 @@
 	<div style="float: left; margin-left: 20px">
 		<a href="${pageContext.request.contextPath}/index.jsp">BookStore</a>
 	</div>
-	<!-- <div
-		style="float: left; margin-left: 100px; margin-top: 50px; background-color: white; border: 3px solid coral;">
+	<div>
 		<form action="products.jsp" method="GET">
 			<input type="text" name="item_name"
-				placeholder="Search everything you need..."
-				style="width: 600px; height: 40px; float: left; border: none" />
-			<input type="image" style="width: 50px; height: 40px; float: left"
+				placeholder="Search"
+				style="width: 600px; height: 40px; float: left; border: none" /> <input
+				type="image" style="width: 50px; height: 40px; float: left"
 				src="resources/searchbtn.png" />
 		</form>
-	</div> -->
+	</div>
 	<%
 		if (session.getAttribute("customerID") == null) {
 	%>
@@ -27,8 +26,8 @@
 	<div style="float: left; margin-left: 100px; margin-top: 50px">
 		Hello
 		<%=session.getAttribute("name")%>
+		<br /> <a href="${pageContext.request.contextPath}/logout.jsp">Logout</a>
 		<br />
-		<a href="${pageContext.request.contextPath}/logout.jsp">Logout</a> <br />
 		<%
 			String mainPage = session.getAttribute("role") == "employee" ? "staff-dashboard.jsp" : "customer-dashboard.jsp";
 		%>

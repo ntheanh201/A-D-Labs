@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Address implements Serializable {
 
-    private List<Shippingaddress> shippingaddressList;
+    private List<ShippingAdd> shippingaddressList;
 
     private static final long serialVersionUID = 1L;
    
@@ -113,11 +113,11 @@ public class Address implements Serializable {
     }
 
 
-    public List<Shippingaddress> getShippingaddressList() {
+    public List<ShippingAdd> getShippingaddressList() {
         return shippingaddressList;
     }
 
-    public void setShippingaddressList(List<Shippingaddress> shippingaddressList) {
+    public void setShippingaddressList(List<ShippingAdd> shippingaddressList) {
         this.shippingaddressList = shippingaddressList;
     }
     

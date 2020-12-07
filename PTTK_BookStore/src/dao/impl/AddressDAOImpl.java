@@ -12,6 +12,7 @@ import java.util.Optional;
 
 import dao.AddressDAO;
 import model.Address;
+import model.ShippingAdd;
 
 
 public class AddressDAOImpl implements AddressDAO{
@@ -23,7 +24,24 @@ public class AddressDAOImpl implements AddressDAO{
 
     @Override
     public Address get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	String sql = "SELECT * FROM address WHERE ID = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            Address item = new Address();
+
+            while (rs.next()) {
+                item.setId(rs.getInt("ID"));
+                item.setCity(rs.getString("City"));
+                item.setDistrict(rs.getString("District"));
+                item.setTown(rs.getString("Town"));
+                item.setDescription(rs.getString("Description"));
+            }
+            return item;
+        } catch (SQLException ex) {
+            return null;
+        }
     }
 
     @Override

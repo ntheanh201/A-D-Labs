@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.impl.AddressDAOImpl;
 import dao.impl.ShippingAddressDAOImpl;
 import model.Address;
-import model.Shippingaddress;
+import model.ShippingAdd;
 
 
 public class ShippingAddressServlet extends HttpServlet {
@@ -52,7 +52,7 @@ public class ShippingAddressServlet extends HttpServlet {
         address.setId(addressID);
 
         ShippingAddressDAOImpl shippingAddressDAOImpl = new ShippingAddressDAOImpl();
-        Shippingaddress shippingaddress = new Shippingaddress();
+        ShippingAdd shippingaddress = new ShippingAdd();
         shippingaddress.setAddressID(address);
         shippingaddress.setNote(request.getParameter("note"));
         int saID = shippingAddressDAOImpl.save(shippingaddress);

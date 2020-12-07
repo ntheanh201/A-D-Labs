@@ -11,7 +11,7 @@ public class Onlineorder implements Serializable {
     private Integer orderID;
     private Integer shippingID;
     private String paymentmethod;
-    private Shippingaddress shippingAddressID;    
+    private ShippingAdd shippingAddressID;    
     private Voucher voucherID;
 
     public Onlineorder() {
@@ -66,11 +66,11 @@ public class Onlineorder implements Serializable {
         this.paymentmethod = paymentmethod;
     }
 
-    public Shippingaddress getShippingAddressID() {
+    public ShippingAdd getShippingAddressID() {
         return shippingAddressID;
     }
 
-    public void setShippingAddressID(Shippingaddress shippingAddressID) {
+    public void setShippingAddressID(ShippingAdd shippingAddressID) {
         this.shippingAddressID = shippingAddressID;
     }
 

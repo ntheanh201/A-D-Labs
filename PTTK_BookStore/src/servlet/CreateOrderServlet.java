@@ -17,7 +17,7 @@ import dao.impl.VoucherDAOImpl;
 import model.Item;
 import model.Onlineorder;
 import model.OrderDetail;
-import model.Shippingaddress;
+import model.ShippingAdd;
 import model.Voucher;
 
 public class CreateOrderServlet extends HttpServlet {
@@ -43,7 +43,7 @@ public class CreateOrderServlet extends HttpServlet {
 		int shippingaddressID = Integer.parseInt(request.getSession().getAttribute("shippingaddressID").toString());
 		int customerID = Integer.parseInt(request.getSession().getAttribute("customerID").toString());
 		String paymentmethod = request.getParameter("method");
-		Shippingaddress s = new Shippingaddress();
+		ShippingAdd s = new ShippingAdd();
 		s.setId(shippingaddressID);
 
 		VoucherDAOImpl voucherDAOImpl = new VoucherDAOImpl();

@@ -25,7 +25,7 @@ public class ItemDAOImpl implements ItemDAO {
                 + "WHERE customer.PersonID = ? "
                 + "AND customer.CartID = cart.ID "
                 + "AND cart.ID = cart_item.CartID "
-                + "AND cart_item.ItemID = item.ID ";
+                + "AND cart_item.ItemID = item.ID ORDER BY item.Name";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, customerId);

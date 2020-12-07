@@ -51,10 +51,10 @@
 			Total:
 			<%=currencyVN.format(total)%></p>
 		<br>
-		<form action="processorder.jsp" method="GET"
+		<form action="handle-order.jsp" method="GET"
 			style="text-align: center;">
 			<input type="text" name="orderID" placeholder="Order ID...">
-			<input type="submit" style="margin-left: 3%" value="Search">
+			<input type="submit" style="margin-left: 3%" value="Handle">
 		</form>
 
 	</div>

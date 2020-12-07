@@ -1,9 +1,9 @@
 
 package dao;
 
-import model.Shippingaddress;
+import model.ShippingAdd;
 
 
-public interface ShippingAddressDAO extends BaseDAO<Shippingaddress>{
+public interface ShippingAddressDAO extends BaseDAO<ShippingAdd>{
     
 }

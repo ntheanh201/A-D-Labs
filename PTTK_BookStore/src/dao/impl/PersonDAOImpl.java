@@ -3,20 +3,17 @@ package dao.impl;
 
 import static dao.BaseDAO.con;
 
-import java.math.BigInteger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import dao.PersonDAO;
+import model.ContactInfor;
 import model.FullName;
-import model.Item;
 import model.Person;
 
 
@@ -29,7 +26,26 @@ public class PersonDAOImpl implements PersonDAO {
 
     @Override
     public Person get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	String sql = "SELECT * FROM person"
+                + " WHERE ID = ? ";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+            Person person = new Person();
+            rs.first();
+            person.setGender(rs.getString("Gender"));
+            person.setDateOfBirth(rs.getString("DateOfBirth"));
+            ContactInfor ci = new ContactInfor(rs.getInt("ContactInforID")); 
+            person.setContactInforID(ci);
+            FullName fn = new FullName(rs.getInt("FullNameID"));
+            person.setFullNameID(fn);
+            return person;
+        } catch (SQLException ex) {
+            Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
 
     @Override

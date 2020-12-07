@@ -44,7 +44,7 @@ html, body {
 					type="text" name="town" /> <br /> <label>Description</label> <input
 					type="text" name="desciption" />
 			</div>
-			<br /> <input type="submit" style="margin-left: 200px" />
+			<br /> <input type="submit" style="margin-left: 200px" value="Register" />
 		</form>
 	</div>
 </body>
