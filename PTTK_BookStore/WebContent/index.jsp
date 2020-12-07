@@ -39,20 +39,7 @@ html, body {
             %>
 		</div>
 		<div style="width: 60%; height: 100%; float: left">
-			<div style="height: 70%">
-				<img src="resources/Bannertong_915x423.png" width="800px"
-					height="400px" style="border: 6px solid white" />
-			</div>
-			<div style="height: 30%">
-				<div style="float: left">
-					<img src="resources/Banner_Coupon_596x186.png" height="120px"
-						width="490px" style="border: 6px solid white" />
-				</div>
-				<div style="float: left">
-					<img src="resources/Banner_ngoaivan10_270x186.png" height="120px"
-						width="290px" style="border: 6px solid white" />
-				</div>
-			</div>
+			<jsp:include page="/items.jsp"></jsp:include>
 		</div>
 		<div style="width: 10%; height: 100%; float: left">&nbsp;</div>
 	</div>

@@ -13,7 +13,7 @@
         ><button><span>View Your Cart</span></button></a
       >
       <br />
-      <a href="items.jsp"
+      <a href="products.jsp"
         ><button><span>View All Items In Store</span></button></a
       >
     </div>

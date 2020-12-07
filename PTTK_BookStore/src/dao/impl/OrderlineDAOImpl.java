@@ -23,11 +23,10 @@ public class OrderlineDAOImpl implements OrderlineDAO{
     public List<Orderline> getAll() {
     	List<Orderline> list = new ArrayList<>();
         ItemDAOImpl aOImpl = new ItemDAOImpl();
-        String sql = "Select * from book_store.orderline";
+        String sql = "Select * from book_store.orderline ORDER BY OrderID";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            //rs.first();
             while (rs.next()) {
                 Orderline o = new Orderline();
                 o.setId(rs.getInt("ID"));

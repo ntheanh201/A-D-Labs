@@ -32,7 +32,7 @@
           <input type="text" name="desciption" />
           <br />
           <br />
-          <label>Note(Time, Phone number,...)</label>
+          <label>Note (Time, Phone number,...)</label>
           <input type="text" name="note" />
         </div>
         <br />

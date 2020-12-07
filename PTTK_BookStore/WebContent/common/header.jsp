@@ -16,7 +16,7 @@
       border: 3px solid coral;
     "
   >
-    <form action="items.jsp" method="GET">
+    <form action="products.jsp" method="GET">
       <input
         type="text"
         name="item_name"
