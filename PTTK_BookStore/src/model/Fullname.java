@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-public class Fullname implements Serializable {
+public class FullName implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -15,10 +15,10 @@ public class Fullname implements Serializable {
     private String lastName;
     private List<Person> personList;
 
-    public Fullname() {
+    public FullName() {
     }
 
-    public Fullname(Integer id) {
+    public FullName(Integer id) {
         this.id = id;
     }
 
@@ -73,10 +73,10 @@ public class Fullname implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Fullname)) {
+        if (!(object instanceof FullName)) {
             return false;
         }
-        Fullname other = (Fullname) object;
+        FullName other = (FullName) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

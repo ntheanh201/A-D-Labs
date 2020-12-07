@@ -4,7 +4,7 @@ package model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Order1 implements Serializable {
+public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -13,12 +13,11 @@ public class Order1 implements Serializable {
     private Date date;
     private Onlineorder onlineorder;
     private Payment paymentID;
-    private Onsiteorder onsiteorder;
 
-    public Order1() {
+    public Order() {
     }
 
-    public Order1(Integer id) {
+    public Order(Integer id) {
         this.id = id;
     }
 
@@ -60,34 +59,6 @@ public class Order1 implements Serializable {
 
     public void setPaymentID(Payment paymentID) {
         this.paymentID = paymentID;
-    }
-
-    public Onsiteorder getOnsiteorder() {
-        return onsiteorder;
-    }
-
-    public void setOnsiteorder(Onsiteorder onsiteorder) {
-        this.onsiteorder = onsiteorder;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Order1)) {
-            return false;
-        }
-        Order1 other = (Order1) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
     }
 
     @Override

@@ -1,9 +1,9 @@
 
 package dao;
 
-import model.Contactinfor;
+import model.ContactInfor;
 
 
-public interface ContactinforDAO  extends BaseDAO<Contactinfor>{
+public interface ContactinforDAO  extends BaseDAO<ContactInfor>{
     
 }

@@ -11,23 +11,23 @@ import java.util.List;
 import java.util.Optional;
 
 import dao.ContactinforDAO;
-import model.Contactinfor;
+import model.ContactInfor;
 
 
 public class ContactInforDAOImpl implements ContactinforDAO{
 
     @Override
-    public List<Contactinfor> getAll() {
+    public List<ContactInfor> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Contactinfor get(int id) {
+    public ContactInfor get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int save(Contactinfor t) {
+    public int save(ContactInfor t) {
         String sql = "INSERT INTO book_store.contactinfor (phonenumber, email, AddressID)"
                 + "VALUES(?,?,?);";
         int key = -1;
@@ -57,17 +57,17 @@ public class ContactInforDAOImpl implements ContactinforDAO{
     }
 
     @Override
-    public void update(Contactinfor t) {
+    public void update(ContactInfor t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Contactinfor t) {
+    public void delete(ContactInfor t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public static void main(String[] args) {
-        Contactinfor c =new Contactinfor();
+        ContactInfor c =new ContactInfor();
         c.getAddressID().setId(2);
         c.setEmail("fafsa");
         c.setPhoneNumber("fsagsaga");

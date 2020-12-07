@@ -4,7 +4,7 @@ package model;
 import java.io.Serializable;
 import java.util.List;
 
-public class Contactinfor implements Serializable {
+public class ContactInfor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -15,10 +15,10 @@ public class Contactinfor implements Serializable {
     private Address addressID;
     private List<Person> personList;
 
-    public Contactinfor() {
+    public ContactInfor() {
     }
 
-    public Contactinfor(Integer id) {
+    public ContactInfor(Integer id) {
         this.id = id;
     }
 
@@ -73,10 +73,10 @@ public class Contactinfor implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Contactinfor)) {
+        if (!(object instanceof ContactInfor)) {
             return false;
         }
-        Contactinfor other = (Contactinfor) object;
+        ContactInfor other = (ContactInfor) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

@@ -14,7 +14,7 @@ public class EmployeeWorkschedule implements Serializable {
     private Date date;
     private Employee employeePersonID;
     
-    private Workschedule workScheduleID;
+    private WorkSchedule workScheduleID;
 
     public EmployeeWorkschedule() {
     }
@@ -55,11 +55,11 @@ public class EmployeeWorkschedule implements Serializable {
         this.employeePersonID = employeePersonID;
     }
 
-    public Workschedule getWorkScheduleID() {
+    public WorkSchedule getWorkScheduleID() {
         return workScheduleID;
     }
 
-    public void setWorkScheduleID(Workschedule workScheduleID) {
+    public void setWorkScheduleID(WorkSchedule workScheduleID) {
         this.workScheduleID = workScheduleID;
     }
 

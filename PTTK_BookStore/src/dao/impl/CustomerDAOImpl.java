@@ -50,16 +50,13 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public int save(Customer t) {
-        String sql = "INSERT INTO book_store.customer (PersonID, CartID, BookstorecardID, MembershiptypeID, WishlistID)"
-                + "VALUES(?,?,?,?,?);";
+        String sql = "INSERT INTO book_store.customer (PersonID, CartID)"
+                + "VALUES(?,?,?,?);";
         int key = -1;
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, t.getPersonID());
             ps.setInt(2, t.getCartID().getId());
-            ps.setInt(3, t.getBookStoreCardID().getId());
-            ps.setInt(4, t.getMembershipTypeID().getId());
-            ps.setInt(5, t.getWishlistID().getId());
 
             int affectedRows = ps.executeUpdate();
 

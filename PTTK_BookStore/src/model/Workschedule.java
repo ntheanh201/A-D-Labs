@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.List;
 
-public class Workschedule implements Serializable {
+public class WorkSchedule implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
     private String month;
@@ -11,10 +11,10 @@ public class Workschedule implements Serializable {
     private Integer employeeWorkSchedules;
     private List<EmployeeWorkschedule> employeeWorkscheduleList;
 
-    public Workschedule() {
+    public WorkSchedule() {
     }
 
-    public Workschedule(Integer id) {
+    public WorkSchedule(Integer id) {
         this.id = id;
     }
 
@@ -69,10 +69,10 @@ public class Workschedule implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Workschedule)) {
+        if (!(object instanceof WorkSchedule)) {
             return false;
         }
-        Workschedule other = (Workschedule) object;
+        WorkSchedule other = (WorkSchedule) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

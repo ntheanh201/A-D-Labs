@@ -34,10 +34,9 @@ public class Book implements Serializable {
     private int categories;
     private List<Item> itemList;
     private List<Category> categoryList;
-    private List<Wishlist> wishlistList;
     private Author authorID;
     private Publisher publisherID;
-    private List<Importingrecord> importingrecordList;
+    private List<ImportingRecord> importingrecordList;
 
     public Book() {
     }
@@ -117,15 +116,6 @@ public class Book implements Serializable {
         this.categoryList = categoryList;
     }
 
-    
-    public List<Wishlist> getWishlistList() {
-        return wishlistList;
-    }
-
-    public void setWishlistList(List<Wishlist> wishlistList) {
-        this.wishlistList = wishlistList;
-    }
-
     public Author getAuthorID() {
         return authorID;
     }
@@ -143,32 +133,12 @@ public class Book implements Serializable {
     }
 
     
-    public List<Importingrecord> getImportingrecordList() {
+    public List<ImportingRecord> getImportingrecordList() {
         return importingrecordList;
     }
 
-    public void setImportingrecordList(List<Importingrecord> importingrecordList) {
+    public void setImportingrecordList(List<ImportingRecord> importingrecordList) {
         this.importingrecordList = importingrecordList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Book)) {
-            return false;
-        }
-        Book other = (Book) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 
 public class Person implements Serializable {
 
@@ -13,14 +12,11 @@ public class Person implements Serializable {
     private String idCard;
     private Seller seller;
     private Employee employee;
-    private Customercarestaff customercarestaff;
-    private Onsiteseller onsiteseller;
-    private Importingstaff importingstaff;
     private Manager manager;
     private Account accountID;
-    private Contactinfor contactInforID;
+    private ContactInfor contactInforID;
     
-    private Fullname fullNameID;
+    private FullName fullNameID;
     private Onlineseller onlineseller;
     private Customer customer;
 
@@ -79,30 +75,6 @@ public class Person implements Serializable {
         this.employee = employee;
     }
 
-    public Customercarestaff getCustomercarestaff() {
-        return customercarestaff;
-    }
-
-    public void setCustomercarestaff(Customercarestaff customercarestaff) {
-        this.customercarestaff = customercarestaff;
-    }
-
-    public Onsiteseller getOnsiteseller() {
-        return onsiteseller;
-    }
-
-    public void setOnsiteseller(Onsiteseller onsiteseller) {
-        this.onsiteseller = onsiteseller;
-    }
-
-    public Importingstaff getImportingstaff() {
-        return importingstaff;
-    }
-
-    public void setImportingstaff(Importingstaff importingstaff) {
-        this.importingstaff = importingstaff;
-    }
-
     public Manager getManager() {
         return manager;
     }
@@ -119,19 +91,19 @@ public class Person implements Serializable {
         this.accountID = accountID;
     }
 
-    public Contactinfor getContactInforID() {
+    public ContactInfor getContactInforID() {
         return contactInforID;
     }
 
-    public void setContactInforID(Contactinfor contactInforID) {
+    public void setContactInforID(ContactInfor contactInforID) {
         this.contactInforID = contactInforID;
     }
 
-    public Fullname getFullNameID() {
+    public FullName getFullNameID() {
         return fullNameID;
     }
 
-    public void setFullNameID(Fullname fullNameID) {
+    public void setFullNameID(FullName fullNameID) {
         this.fullNameID = fullNameID;
     }
 
@@ -152,28 +124,8 @@ public class Person implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Person)) {
-            return false;
-        }
-        Person other = (Person) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "Person{" + "id=" + id + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", idCard=" + idCard + ", seller=" + seller + ", employee=" + employee + ", customercarestaff=" + customercarestaff + ", onsiteseller=" + onsiteseller + ", importingstaff=" + importingstaff + ", manager=" + manager + ", accountID=" + accountID + ", contactInforID=" + contactInforID + ", fullNameID=" + fullNameID + ", onlineseller=" + onlineseller + ", customer=" + customer + '}';
+        return "Person{" + "id=" + id + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", idCard=" + idCard + ", seller=" + seller + ", employee=" + employee + ", manager=" + manager + ", accountID=" + accountID + ", contactInforID=" + contactInforID + ", fullNameID=" + fullNameID + ", onlineseller=" + onlineseller + ", customer=" + customer + '}';
     }
 
     

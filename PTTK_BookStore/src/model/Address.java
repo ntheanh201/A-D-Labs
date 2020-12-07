@@ -20,9 +20,9 @@ public class Address implements Serializable {
     
     private String description;
     
-    private List<Branchstore> branchstoreList;
+    private List<BranchStore> branchstoreList;
     
-    private List<Contactinfor> contactinforList;
+    private List<ContactInfor> contactinforList;
 
     public Address() {
     }
@@ -71,19 +71,19 @@ public class Address implements Serializable {
         this.description = description;
     }
 
-    public List<Branchstore> getBranchstoreList() {
+    public List<BranchStore> getBranchstoreList() {
         return branchstoreList;
     }
 
-    public void setBranchstoreList(List<Branchstore> branchstoreList) {
+    public void setBranchstoreList(List<BranchStore> branchstoreList) {
         this.branchstoreList = branchstoreList;
     }
 
-    public List<Contactinfor> getContactinforList() {
+    public List<ContactInfor> getContactinforList() {
         return contactinforList;
     }
 
-    public void setContactinforList(List<Contactinfor> contactinforList) {
+    public void setContactinforList(List<ContactInfor> contactinforList) {
         this.contactinforList = contactinforList;
     }
 

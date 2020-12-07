@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import dao.PersonDAO;
-import model.Fullname;
+import model.FullName;
 import model.Item;
 import model.Person;
 
@@ -88,7 +88,7 @@ public class PersonDAOImpl implements PersonDAO {
             Person p = new Person();
             rs.first();
             p.setId(rs.getInt("person.id"));
-            Fullname f = new Fullname();
+            FullName f = new FullName();
             f.setFirstName(rs.getString("firstname"));
             f.setMiddleName(rs.getString("middlename"));
             f.setLastName(rs.getString("lastname"));            

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.impl.AccountDAOImpl;
 import dao.impl.PersonDAOImpl;
@@ -54,7 +55,8 @@ public class LoginServlet extends HttpServlet {
 
 		Account a = accountDAOImpl.checkAccount(account);
 		String redirectUrl = "result.jsp?status=%s&detail=%s";
-
+		HttpSession httpSession = request.getSession();
+		
 		int customerID = a.getId();
 		Person p = new PersonDAOImpl().getPersonByAccountID(customerID);
 		String name = p.getFullNameID().getLastName() + " " + p.getFullNameID().getMiddleName() + " "
@@ -62,16 +64,17 @@ public class LoginServlet extends HttpServlet {
 
 		System.out.println(customerID);
 		System.out.println(name);
-
+		
+		httpSession.setAttribute("customerID", customerID);
+		httpSession.setAttribute("name", name);
+		
 		if (a != null) {
 			if (a.getRole().equalsIgnoreCase("employee")) {
-				response.sendRedirect(redirectUrl.format("stafflogin.jsp?customerID=" + p.getId() + "&name=" + name));
-				System.out.println(
-						"theanhdz" + redirectUrl.format("stafflogin.jsp?customerID=" + p.getId() + "&name=" + name));
+				httpSession.setAttribute("role", "employee");
+				response.sendRedirect("stafflogin.jsp");
 			} else {
-				response.sendRedirect(redirectUrl.format("bookstore.jsp?customerID=" + p.getId() + "&name=" + name));
-				System.out.println(
-						"theanhdz2" + redirectUrl.format("stafflogin.jsp?customerID=" + p.getId() + "&name=" + name));
+				httpSession.setAttribute("role", "customer");
+				response.sendRedirect("customer-dashboard.jsp");
 			}
 		} else {
 			response.sendRedirect(redirectUrl.format(redirectUrl, "Fail", "Authentication failed"));

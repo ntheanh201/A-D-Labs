@@ -12,8 +12,6 @@ public class Bill implements Serializable {
     private Integer payment;
     
     private Date date;
-    private Onlinebill onlinebill;
-    private Onsitebill onsitebill;
 
     public Bill() {
     }
@@ -44,42 +42,6 @@ public class Bill implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public Onlinebill getOnlinebill() {
-        return onlinebill;
-    }
-
-    public void setOnlinebill(Onlinebill onlinebill) {
-        this.onlinebill = onlinebill;
-    }
-
-    public Onsitebill getOnsitebill() {
-        return onsitebill;
-    }
-
-    public void setOnsitebill(Onsitebill onsitebill) {
-        this.onsitebill = onsitebill;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Bill)) {
-            return false;
-        }
-        Bill other = (Bill) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
     }
 
     @Override

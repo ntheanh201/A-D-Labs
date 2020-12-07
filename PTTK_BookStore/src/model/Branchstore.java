@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-public class Branchstore implements Serializable {
+public class BranchStore implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -15,10 +15,10 @@ public class Branchstore implements Serializable {
     private Address addressID;
     private List<Employee> employeeList;
 
-    public Branchstore() {
+    public BranchStore() {
     }
 
-    public Branchstore(Integer id) {
+    public BranchStore(Integer id) {
         this.id = id;
     }
 
@@ -73,10 +73,10 @@ public class Branchstore implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Branchstore)) {
+        if (!(object instanceof BranchStore)) {
             return false;
         }
-        Branchstore other = (Branchstore) object;
+        BranchStore other = (BranchStore) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

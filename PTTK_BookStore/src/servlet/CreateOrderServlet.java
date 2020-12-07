@@ -20,7 +20,7 @@ import model.Orderline;
 import model.Shippingaddress;
 import model.Voucher;
 
-public class MakeOrderServlet extends HttpServlet {
+public class CreateOrderServlet extends HttpServlet {
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

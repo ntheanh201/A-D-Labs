@@ -13,23 +13,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import dao.FullnameDAO;
-import model.Fullname;
+import model.FullName;
 
 
 public class FullnameDAOImpl implements FullnameDAO {
 
     @Override
-    public List<Fullname> getAll() {
+    public List<FullName> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Fullname get(int id) {
+    public FullName get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public int save(Fullname t) {
+    public int save(FullName t) {
         String sql = "INSERT INTO book_store.fullname (firstname, middlename, lastname)"
                 + "VALUES(?,?,?);";
         int key = -1;
@@ -59,16 +59,16 @@ public class FullnameDAOImpl implements FullnameDAO {
     }
 
     @Override
-    public void update(Fullname t) {
+    public void update(FullName t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Fullname t) {
+    public void delete(FullName t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public static void main(String[] args) {
-        Fullname f = new Fullname();
+        FullName f = new FullName();
         f.setFirstName("x");
         f.setMiddleName("y");
         f.setLastName("z");

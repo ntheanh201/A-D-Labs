@@ -21,8 +21,8 @@
         <servlet-class>servlet.ShippingAddressServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>makeOrder</servlet-name>
-        <servlet-class>servlet.MakeOrderServlet</servlet-class>
+        <servlet-name>createOrder</servlet-name>
+        <servlet-class>servlet.CreateOrderServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OnlineOrderServlet</servlet-name>
@@ -49,8 +49,8 @@
         <url-pattern>/shippingaddress</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>makeOrder</servlet-name>
-        <url-pattern>/makeOrder</url-pattern>
+        <servlet-name>createOrder</servlet-name>
+        <url-pattern>/createOrder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>OnlineOrderServlet</servlet-name>

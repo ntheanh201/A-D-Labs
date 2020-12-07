@@ -10,24 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.impl.AccountDAOImpl;
 import dao.impl.AddressDAOImpl;
-import dao.impl.BookstorecardDAOImpl;
 import dao.impl.CartDAOImpl;
 import dao.impl.ContactInforDAOImpl;
 import dao.impl.CustomerDAOImpl;
 import dao.impl.FullnameDAOImpl;
-import dao.impl.MembershiptypeDAOImpl;
 import dao.impl.PersonDAOImpl;
-import dao.impl.WishlistDAOImpl;
 import model.Account;
 import model.Address;
-import model.Bookstorecard;
 import model.Cart;
-import model.Contactinfor;
+import model.ContactInfor;
 import model.Customer;
-import model.Fullname;
-import model.Membershiptype;
+import model.FullName;
 import model.Person;
-import model.Wishlist;
 
 public class RegisterServlet extends HttpServlet {
 
@@ -65,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
 		account.setRole("customer");
 
 		FullnameDAOImpl fullnameDAOImpl = new FullnameDAOImpl();
-		Fullname fullname = new Fullname();
+		FullName fullname = new FullName();
 		fullname.setFirstName(request.getParameter("firstname"));
 		fullname.setMiddleName(request.getParameter("middlename"));
 		fullname.setLastName(request.getParameter("lastname"));
@@ -78,7 +72,7 @@ public class RegisterServlet extends HttpServlet {
 		address.setDescription(request.getParameter("description"));
 
 		ContactInforDAOImpl contactInforDAOImpl = new ContactInforDAOImpl();
-		Contactinfor contactinfor = new Contactinfor();
+		ContactInfor contactinfor = new ContactInfor();
 		contactinfor.setEmail(request.getParameter("email"));
 		contactinfor.setPhoneNumber(request.getParameter("phonenumber"));
 
@@ -111,9 +105,6 @@ public class RegisterServlet extends HttpServlet {
 
 			int personID = personDAOImpl.save(person);
 
-			int bookstorecardID = new BookstorecardDAOImpl().save(new Bookstorecard());
-			int membershiptypeID = new MembershiptypeDAOImpl().save(new Membershiptype());
-			int wishlistID = new WishlistDAOImpl().save(new Wishlist());
 			int cartID = new CartDAOImpl().save(new Cart());
 
 			CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();
@@ -121,12 +112,6 @@ public class RegisterServlet extends HttpServlet {
 			customer.setPersonID(personID);
 			customer.setCartID(new Cart());
 			customer.getCartID().setId(cartID);
-			customer.setBookStoreCardID(new Bookstorecard());
-			customer.getBookStoreCardID().setId(bookstorecardID);
-			customer.setMembershipTypeID(new Membershiptype());
-			customer.getMembershipTypeID().setId(membershiptypeID);
-			customer.setWishlistID(new Wishlist());
-			customer.getWishlistID().setId(wishlistID);
 
 			customerDAOImpl.save(customer);
 			response.sendRedirect(redirectUrl.format(redirectUrl, "Success", "Register successful!"));

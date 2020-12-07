@@ -13,7 +13,7 @@ public class Employee implements Serializable {
     private BigInteger salary;
     private Date startDate;
     private Integer personID;
-    private Branchstore branchStoreID;
+    private BranchStore branchStoreID;
     private Person person;
     
     private List<EmployeeWorkschedule> employeeWorkscheduleList;
@@ -59,11 +59,11 @@ public class Employee implements Serializable {
         this.personID = personID;
     }
 
-    public Branchstore getBranchStoreID() {
+    public BranchStore getBranchStoreID() {
         return branchStoreID;
     }
 
-    public void setBranchStoreID(Branchstore branchStoreID) {
+    public void setBranchStoreID(BranchStore branchStoreID) {
         this.branchStoreID = branchStoreID;
     }
 

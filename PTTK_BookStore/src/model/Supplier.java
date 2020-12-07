@@ -10,7 +10,7 @@ public class Supplier implements Serializable {
     
     private Integer id;
     private String name;
-    private List<Importingrecord> importingrecordList;
+    private List<ImportingRecord> importingrecordList;
 
     public Supplier() {
     }
@@ -36,11 +36,11 @@ public class Supplier implements Serializable {
     }
 
     
-    public List<Importingrecord> getImportingrecordList() {
+    public List<ImportingRecord> getImportingrecordList() {
         return importingrecordList;
     }
 
-    public void setImportingrecordList(List<Importingrecord> importingrecordList) {
+    public void setImportingrecordList(List<ImportingRecord> importingrecordList) {
         this.importingrecordList = importingrecordList;
     }
 

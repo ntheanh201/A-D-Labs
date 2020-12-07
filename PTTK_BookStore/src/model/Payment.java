@@ -14,7 +14,7 @@ public class Payment implements Serializable {
     private String method;
     private Qrcode qrcode;
     private Cash cash;
-    private List<Order1> order1List;
+    private List<Order> order1List;
     private Transfer transfer;
 
     public Payment() {
@@ -65,11 +65,11 @@ public class Payment implements Serializable {
     }
 
     
-    public List<Order1> getOrder1List() {
+    public List<Order> getOrder1List() {
         return order1List;
     }
 
-    public void setOrder1List(List<Order1> order1List) {
+    public void setOrder1List(List<Order> order1List) {
         this.order1List = order1List;
     }
 
