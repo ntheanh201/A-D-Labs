@@ -1,7 +1,7 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.math.BigInteger;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import dao.ItemDAO;
+import controller.ItemDAO;
 import model.Item;
 
 public class ItemDAOImpl implements ItemDAO {

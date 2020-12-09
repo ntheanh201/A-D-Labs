@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.impl.OnlineOrderDAOImpl;
+import controller.impl.OnlineOrderDAOImpl;
 import model.Onlineorder;
 
 public class OnlineOrderServlet extends HttpServlet {

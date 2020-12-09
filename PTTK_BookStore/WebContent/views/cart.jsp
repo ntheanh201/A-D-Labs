@@ -2,7 +2,7 @@
 <%@page import="java.util.Locale"%>
 <%@page import="model.Item"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.ItemDAOImpl"%>
+<%@page import="controller.impl.ItemDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

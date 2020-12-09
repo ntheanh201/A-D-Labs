@@ -1,46 +1,56 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import dao.CartDAO;
+import controller.CustomerDAO;
 import model.Cart;
+import model.Customer;
 
-public class CartDAOImpl implements CartDAO {
+public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
-	public Cart findCartByCustomer(String customerId) {
+	public List<Customer> getAll() {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public List<Object> getAll() {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+	public Customer get(int id) {
+		String sql = "SELECT * FROM customer" + " WHERE PersonID = ? ";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+
+			ResultSet rs = ps.executeQuery();
+			Customer customer = new Customer();
+			rs.first();
+			customer.setPersonID(rs.getInt("PersonID"));
+			Cart c = new Cart(rs.getInt("CartID"));
+			customer.setCartID(c);
+			return customer;
+		} catch (SQLException ex) {
+			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+			return null;
+		}
 	}
 
 	@Override
-	public Optional<Object> get(int id) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
-	}
-
-	@Override
-	public int save(Object t) {
-		String sql = "INSERT INTO book_store.cart ()" + "VALUES();";
+	public int save(Customer t) {
+		String sql = "INSERT INTO book_store.customer (PersonID, CartID)" + "VALUES(?,?,?,?);";
 		int key = -1;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			ps.setInt(1, t.getPersonID());
+			ps.setInt(2, t.getCartID().getId());
 
 			int affectedRows = ps.executeUpdate();
 
@@ -62,30 +72,15 @@ public class CartDAOImpl implements CartDAO {
 	}
 
 	@Override
-	public void update(Object t) {
+	public void update(Customer t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public void delete(Object t) {
+	public void delete(Customer t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
-	}
-
-	@Override
-	public void addNewItemToCart(int ItemID, int CartID) {
-		// System.out.println(ItemID+" "+CartID);
-		String sql = "INSERT INTO cart_item (CartID, ItemID)" + "VALUES(?,?);";
-		try {
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, CartID);
-			ps.setInt(2, ItemID);
-
-			ps.executeUpdate();
-		} catch (SQLException ex) {
-			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
-		}
 	}
 
 }

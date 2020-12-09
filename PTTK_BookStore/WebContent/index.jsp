@@ -1,6 +1,6 @@
 <%@page import="model.Category"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.CategoryDAOImpl"%>
+<%@page import="controller.impl.CategoryDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,46 +9,32 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-import dao.ShippingAddressDAO;
-import model.ShippingAdd;
+import controller.ContactinforDAO;
+import model.ContactInfor;
 
-public class ShippingAddressDAOImpl implements ShippingAddressDAO {
+public class ContactInforDAOImpl implements ContactinforDAO {
 
 	@Override
-	public List<ShippingAdd> getAll() {
+	public List<ContactInfor> getAll() {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public ShippingAdd get(int id) {
-		String sql = "SELECT * FROM shippingaddress WHERE ID = ?";
-		try {
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, id);
-			ResultSet rs = ps.executeQuery();
-			ShippingAdd item = new ShippingAdd();
-			AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
-
-			while (rs.next()) {
-				item.setId(rs.getInt("ID"));
-				item.setNote(rs.getString("Note"));
-				item.setAddressID(addressDAOImpl.get(rs.getInt("addressID")));
-			}
-			return item;
-		} catch (SQLException ex) {
-			return null;
-		}
+	public ContactInfor get(int id) {
+		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+																		// Tools | Templates.
 	}
 
 	@Override
-	public int save(ShippingAdd t) {
-		String sql = "INSERT INTO book_store.shippingaddress (note, addressid)" + "VALUES(?,?);";
+	public int save(ContactInfor t) {
+		String sql = "INSERT INTO book_store.contactinfor (phonenumber, email, AddressID)" + "VALUES(?,?,?);";
 		int key = -1;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			ps.setString(1, t.getNote());
-			ps.setInt(2, t.getAddressID().getId());
+			ps.setString(1, t.getPhoneNumber());
+			ps.setString(2, t.getEmail());
+			ps.setInt(3, t.getAddressID().getId());
 
 			int affectedRows = ps.executeUpdate();
 
@@ -70,15 +56,24 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 	}
 
 	@Override
-	public void update(ShippingAdd t) {
+	public void update(ContactInfor t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public void delete(ShippingAdd t) {
+	public void delete(ContactInfor t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
+	public static void main(String[] args) {
+		ContactInfor c = new ContactInfor();
+		c.getAddressID().setId(2);
+		c.setEmail("fafsa");
+		c.setPhoneNumber("fsagsaga");
+
+//        System.out.println(c.getAddressID().getId());
+//        System.out.println(new ContactInforDAOImpl().save(c));
+	}
 }

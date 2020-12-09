@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.impl.CartDAOImpl;
-import dao.impl.CustomerDAOImpl;
+import controller.impl.CartDAOImpl;
+import controller.impl.CustomerDAOImpl;
 
 public class CartServlet extends HttpServlet {
 	CartDAOImpl cartDAOImpl = new CartDAOImpl();

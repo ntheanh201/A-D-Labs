@@ -1,7 +1,7 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-import dao.AddressDAO;
+import controller.AddressDAO;
 import model.Address;
 
 

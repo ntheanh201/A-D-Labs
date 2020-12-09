@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.impl.AccountDAOImpl;
-import dao.impl.PersonDAOImpl;
+import controller.impl.AccountDAOImpl;
+import controller.impl.PersonDAOImpl;
 import model.Account;
 import model.Person;
 

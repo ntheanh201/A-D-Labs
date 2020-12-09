@@ -1,21 +1,21 @@
 <%@page import="model.FullName"%>
-<%@page import="dao.impl.FullnameDAOImpl"%>
+<%@page import="controller.impl.FullnameDAOImpl"%>
 <%@page import="model.Person"%>
-<%@page import="dao.impl.PersonDAOImpl"%>
+<%@page import="controller.impl.PersonDAOImpl"%>
 <%@page import="model.Customer"%>
-<%@page import="dao.impl.CustomerDAOImpl"%>
+<%@page import="controller.impl.CustomerDAOImpl"%>
 <%@page import="model.ShippingAdd"%>
-<%@page import="dao.impl.ShippingAddressDAOImpl"%>
+<%@page import="controller.impl.ShippingAddressDAOImpl"%>
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.util.Locale"%>
 <%@page import="model.Item"%>
-<%@page import="dao.impl.ItemDAOImpl"%>
+<%@page import="controller.impl.ItemDAOImpl"%>
 <%@page import="model.OrderDetail"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.OrderDetailDAOImpl"%>
+<%@page import="controller.impl.OrderDetailDAOImpl"%>
 <%@page import="model.Onlineorder"%>
-<%@page import="dao.impl.OnlineOrderDAOImpl"%>
-<%@page import="dao.impl.PersonDAOImpl"%>
+<%@page import="controller.impl.OnlineOrderDAOImpl"%>
+<%@page import="controller.impl.PersonDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

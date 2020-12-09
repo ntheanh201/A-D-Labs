@@ -4,7 +4,7 @@
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="model.Item"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.ItemDAOImpl"%>
+<%@page import="controller.impl.ItemDAOImpl"%>
 <div id="items">
 	<%
 		String itemName = request.getParameter("item_name");

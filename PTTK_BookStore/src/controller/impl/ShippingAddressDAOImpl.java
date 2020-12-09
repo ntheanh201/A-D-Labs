@@ -1,56 +1,54 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import dao.CustomerDAO;
-import model.Cart;
-import model.Customer;
+import controller.ShippingAddressDAO;
+import model.ShippingAdd;
 
-public class CustomerDAOImpl implements CustomerDAO {
+public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 
 	@Override
-	public List<Customer> getAll() {
+	public List<ShippingAdd> getAll() {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public Customer get(int id) {
-		String sql = "SELECT * FROM customer" + " WHERE PersonID = ? ";
+	public ShippingAdd get(int id) {
+		String sql = "SELECT * FROM shippingaddress WHERE ID = ?";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
-
 			ResultSet rs = ps.executeQuery();
-			Customer customer = new Customer();
-			rs.first();
-			customer.setPersonID(rs.getInt("PersonID"));
-			Cart c = new Cart(rs.getInt("CartID"));
-			customer.setCartID(c);
-			return customer;
+			ShippingAdd item = new ShippingAdd();
+			AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
+
+			while (rs.next()) {
+				item.setId(rs.getInt("ID"));
+				item.setNote(rs.getString("Note"));
+				item.setAddressID(addressDAOImpl.get(rs.getInt("addressID")));
+			}
+			return item;
 		} catch (SQLException ex) {
-			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
 			return null;
 		}
 	}
 
 	@Override
-	public int save(Customer t) {
-		String sql = "INSERT INTO book_store.customer (PersonID, CartID)" + "VALUES(?,?,?,?);";
+	public int save(ShippingAdd t) {
+		String sql = "INSERT INTO book_store.shippingaddress (note, addressid)" + "VALUES(?,?);";
 		int key = -1;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			ps.setInt(1, t.getPersonID());
-			ps.setInt(2, t.getCartID().getId());
+			ps.setString(1, t.getNote());
+			ps.setInt(2, t.getAddressID().getId());
 
 			int affectedRows = ps.executeUpdate();
 
@@ -72,13 +70,13 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 
 	@Override
-	public void update(Customer t) {
+	public void update(ShippingAdd t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public void delete(Customer t) {
+	public void delete(ShippingAdd t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}

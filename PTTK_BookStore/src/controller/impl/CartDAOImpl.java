@@ -1,40 +1,46 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import dao.ContactinforDAO;
-import model.ContactInfor;
+import controller.CartDAO;
+import model.Cart;
 
-public class ContactInforDAOImpl implements ContactinforDAO {
+public class CartDAOImpl implements CartDAO {
 
 	@Override
-	public List<ContactInfor> getAll() {
+	public Cart findCartByCustomer(String customerId) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public ContactInfor get(int id) {
+	public List<Object> getAll() {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public int save(ContactInfor t) {
-		String sql = "INSERT INTO book_store.contactinfor (phonenumber, email, AddressID)" + "VALUES(?,?,?);";
+	public Optional<Object> get(int id) {
+		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+																		// Tools | Templates.
+	}
+
+	@Override
+	public int save(Object t) {
+		String sql = "INSERT INTO book_store.cart ()" + "VALUES();";
 		int key = -1;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			ps.setString(1, t.getPhoneNumber());
-			ps.setString(2, t.getEmail());
-			ps.setInt(3, t.getAddressID().getId());
 
 			int affectedRows = ps.executeUpdate();
 
@@ -56,24 +62,30 @@ public class ContactInforDAOImpl implements ContactinforDAO {
 	}
 
 	@Override
-	public void update(ContactInfor t) {
+	public void update(Object t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public void delete(ContactInfor t) {
+	public void delete(Object t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
-	public static void main(String[] args) {
-		ContactInfor c = new ContactInfor();
-		c.getAddressID().setId(2);
-		c.setEmail("fafsa");
-		c.setPhoneNumber("fsagsaga");
+	@Override
+	public void addNewItemToCart(int ItemID, int CartID) {
+		// System.out.println(ItemID+" "+CartID);
+		String sql = "INSERT INTO cart_item (CartID, ItemID)" + "VALUES(?,?);";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, CartID);
+			ps.setInt(2, ItemID);
 
-//        System.out.println(c.getAddressID().getId());
-//        System.out.println(new ContactInforDAOImpl().save(c));
+			ps.executeUpdate();
+		} catch (SQLException ex) {
+			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	}
+
 }

@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.impl.AddressDAOImpl;
-import dao.impl.ShippingAddressDAOImpl;
+import controller.impl.AddressDAOImpl;
+import controller.impl.ShippingAddressDAOImpl;
 import model.Address;
 import model.ShippingAdd;
 

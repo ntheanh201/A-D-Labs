@@ -1,7 +1,7 @@
 
-package dao.impl;
+package controller.impl;
 
-import static dao.BaseDAO.con;
+import static controller.BaseDAO.con;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import dao.PersonDAO;
+import controller.PersonDAO;
 import model.ContactInfor;
 import model.FullName;
 import model.Person;

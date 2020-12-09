@@ -1,12 +1,12 @@
 <%@page import="java.text.NumberFormat"%>
 <%@page import="java.util.Locale"%>
 <%@page import="model.Item"%>
-<%@page import="dao.impl.ItemDAOImpl"%>
+<%@page import="controller.impl.ItemDAOImpl"%>
 <%@page import="model.OrderDetail"%>
 <%@page import="java.util.List"%>
-<%@page import="dao.impl.OrderDetailDAOImpl"%>
+<%@page import="controller.impl.OrderDetailDAOImpl"%>
 <%@page import="model.Onlineorder"%>
-<%@page import="dao.impl.OnlineOrderDAOImpl"%>
+<%@page import="controller.impl.OnlineOrderDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

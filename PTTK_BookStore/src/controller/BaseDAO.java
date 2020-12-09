@@ -1,5 +1,5 @@
 
-package dao;
+package controller;
 
 import java.sql.Connection;
 import java.util.List;
