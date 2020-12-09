@@ -1952,3 +1952,39 @@ org.eclipse.jdt.core.JavaModelException: build/classes/controller [in Btl-LTW-Sh
 2020-12-10 01:20:29,802 [Worker-7: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-12-10 01:20:29,803 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/system_design-main/src/test/resources
 2020-12-10 01:23:38,931 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-12-10 01:25:13,256 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:25:13,257 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 01:25:13,259 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:25:13,260 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 01:25:13,981 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:25:13,985 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2020-12-10 01:25:13,992 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:25:13,993 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/system_design-main/src/test/resources
+2020-12-10 01:49:37,353 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:49:37,360 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 01:49:37,361 [Worker-34: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:49:37,362 [Worker-34: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 01:58:36,436 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:58:36,439 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 01:58:36,440 [Worker-15: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:58:36,441 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 01:59:12,859 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:59:12,860 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 01:59:12,861 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:59:12,862 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 01:59:14,173 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:59:14,173 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 01:59:14,175 [Worker-33: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 01:59:14,175 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 02:00:00,969 [Worker-39: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 02:00:00,969 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 02:00:00,971 [Worker-39: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 02:00:00,971 [Worker-39: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 02:02:16,144 [Worker-44: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 02:02:16,147 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 02:02:16,148 [Worker-44: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 02:02:16,149 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
+2020-12-10 02:02:55,285 [Worker-41: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 02:02:55,286 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/main/resources
+2020-12-10 02:02:55,287 [Worker-41: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-12-10 02:02:55,287 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/macbook/Downloads/TheAnh/Documents/workspace/Btl-LTW-Shop-Pet/src/test/resources
