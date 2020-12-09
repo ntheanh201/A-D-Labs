@@ -12,7 +12,6 @@ public class Order implements Serializable {
     private String type;
     private Date date;
     private Onlineorder onlineorder;
-    private Payment paymentID;
 
     public Order() {
     }
@@ -51,14 +50,6 @@ public class Order implements Serializable {
 
     public void setOnlineorder(Onlineorder onlineorder) {
         this.onlineorder = onlineorder;
-    }
-
-    public Payment getPaymentID() {
-        return paymentID;
-    }
-
-    public void setPaymentID(Payment paymentID) {
-        this.paymentID = paymentID;
     }
 
     @Override

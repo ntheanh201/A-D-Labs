@@ -68,7 +68,7 @@ public class RegisterServlet extends HttpServlet {
 		Address address = new Address();
 		address.setCity(request.getParameter("city"));
 		address.setDistrict(request.getParameter("district"));
-		address.setTown(request.getParameter("town"));
+		address.setHouseNumber(request.getParameter("houseNumber"));
 		address.setDescription(request.getParameter("description"));
 
 		ContactInforDAOImpl contactInforDAOImpl = new ContactInforDAOImpl();
@@ -117,15 +117,4 @@ public class RegisterServlet extends HttpServlet {
 			response.sendRedirect(redirectUrl.format(redirectUrl, "Success", "Register successful!"));
 		}
 	}
-
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
-
 }

@@ -29,4 +29,14 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="dao.CategoryDAO"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="model.ShippingAddress"/>
+    <fullyQualifiedTypeName name="model.ShippingAdd"/>
+    <fullyQualifiedTypeName name="model.Address"/>
+    <fullyQualifiedTypeName name="model.ContactInfor"/>
+    <fullyQualifiedTypeName name="org.apache.http.client.HttpClient"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
 </qualifiedTypeNameHistroy>

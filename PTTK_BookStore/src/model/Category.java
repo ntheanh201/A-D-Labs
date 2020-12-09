@@ -6,77 +6,51 @@ import java.util.List;
 
 public class Category implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
-    private Integer id;
-    
-    private String name;
-    private String description;
-    private List<Book> bookList;
+	private static final long serialVersionUID = 1L;
 
-    public Category() {
-    }
+	private Integer id;
 
-    public Category(Integer id) {
-        this.id = id;
-    }
+	private String name;
+	private String description;
+	private List<Book> bookList;
 
-    public Integer getId() {
-        return id;
-    }
+	public Category() {
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Category(Integer id) {
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    
-    public List<Book> getBookList() {
-        return bookList;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+	public List<Book> getBookList() {
+		return bookList;
+	}
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Category)) {
-            return false;
-        }
-        Category other = (Category) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+	public void setBookList(List<Book> bookList) {
+		this.bookList = bookList;
+	}
 
-    @Override
-    public String toString() {
-        return "model.Category[ id=" + id + " ]";
-    }
-    
 }

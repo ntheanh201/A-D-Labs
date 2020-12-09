@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-import java.util.List;
 
 
 public class Author implements Serializable {
@@ -9,11 +8,10 @@ public class Author implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Integer id;
-    
     private String name;
     private String description;
-    private List<Book> bookList;
-
+    private String email;
+    
     public Author() {
     }
 
@@ -45,38 +43,13 @@ public class Author implements Serializable {
         this.description = description;
     }
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
     
-    public List<Book> getBookList() {
-        return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Author)) {
-            return false;
-        }
-        Author other = (Author) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "model.Author[ id=" + id + " ]";
-    }
     
 }

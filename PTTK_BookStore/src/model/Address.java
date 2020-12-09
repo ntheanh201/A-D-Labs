@@ -2,28 +2,17 @@
 package model;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Address implements Serializable {
-
-    private List<ShippingAdd> shippingaddressList;
-
     private static final long serialVersionUID = 1L;
    
     private Integer id;
-    
-    private String city;
-    
+    private String houseNumber;
+    private String street;
     private String district;
-    
-    private String town;
-    
+    private String city;
     private String description;
-    
-    private List<BranchStore> branchstoreList;
-    
-    private List<ContactInfor> contactinforList;
-
+        
     public Address() {
     }
 
@@ -55,14 +44,6 @@ public class Address implements Serializable {
         this.district = district;
     }
 
-    public String getTown() {
-        return town;
-    }
-
-    public void setTown(String town) {
-        this.town = town;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -70,55 +51,24 @@ public class Address implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+	public String getHouseNumber() {
+		return houseNumber;
+	}
+	public void setHouseNumber(String houseNumber) {
+		this.houseNumber = houseNumber;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
 
-    public List<BranchStore> getBranchstoreList() {
-        return branchstoreList;
-    }
-
-    public void setBranchstoreList(List<BranchStore> branchstoreList) {
-        this.branchstoreList = branchstoreList;
-    }
-
-    public List<ContactInfor> getContactinforList() {
-        return contactinforList;
-    }
-
-    public void setContactinforList(List<ContactInfor> contactinforList) {
-        this.contactinforList = contactinforList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Address)) {
-            return false;
-        }
-        Address other = (Address) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Address{" + "shippingaddressList=" + shippingaddressList + ", id=" + id + ", city=" + city + ", district=" + district + ", town=" + town + ", description=" + description + ", branchstoreList=" + branchstoreList + ", contactinforList=" + contactinforList + '}';
-    }
-
-
-    public List<ShippingAdd> getShippingaddressList() {
-        return shippingaddressList;
-    }
-
-    public void setShippingaddressList(List<ShippingAdd> shippingaddressList) {
-        this.shippingaddressList = shippingaddressList;
-    }
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", houseNumber=" + houseNumber + ", street=" + street + ", district=" + district
+				+ ", city=" + city + ", description=" + description + "]";
+	}
+    
     
 }

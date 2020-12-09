@@ -10,7 +10,7 @@ html, body {
 }
 </style>
 </head>
-<bodytyle="background-color: azure; height: 200px">
+<body>
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<h1 style="margin-left: 300px; color: red">Register now for your
 		First-Super-Discount!</h1>
@@ -44,7 +44,8 @@ html, body {
 					type="text" name="town" /> <br /> <label>Description</label> <input
 					type="text" name="desciption" />
 			</div>
-			<br /> <input type="submit" style="margin-left: 200px" value="Register" />
+			<br /> <input type="submit" style="margin-left: 200px"
+				value="Register" />
 		</form>
 	</div>
 </body>

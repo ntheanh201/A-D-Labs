@@ -100,7 +100,7 @@ html, body {
 		<div>
 			<span style="font-weight: bold">Shipping Information:</span> <span
 				style="color: firebrick"><%=shipadd.getAddressID().getDistrict()%>,
-				<%=shipadd.getAddressID().getTown()%>, <%=shipadd.getAddressID().getCity()%></span>
+				<%=shipadd.getAddressID().getHouseNumber()%>, <%=shipadd.getAddressID().getCity()%></span>
 		</div>
 		<div>
 			<span style="font-weight: bold">Note:</span> <span

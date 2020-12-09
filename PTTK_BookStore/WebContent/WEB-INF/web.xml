@@ -46,7 +46,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ShippingAddressServlet</servlet-name>
-        <url-pattern>/shippingaddress</url-pattern>
+        <url-pattern>/addShippingAddress</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>createOrder</servlet-name>

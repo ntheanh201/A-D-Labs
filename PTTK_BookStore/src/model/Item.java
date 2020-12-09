@@ -3,113 +3,69 @@ package model;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.List;
 
 public class Item implements Serializable {
+	private static final long serialVersionUID = 1L;
+	private Integer id;
+	private String name;
+	private BigInteger salePrice;
+	private String description;
+	private Integer books;
+	private String url;
 
-    private List<Cart> cartList;
-    private List<OrderDetail> orderlineList;
+	public Item() {
+	}
 
-    private static final long serialVersionUID = 1L;
-    private Integer id;
-    private String name;
-    private BigInteger salePrice;
-    private String description;
-    private Integer promotions;
-    private Integer feedbacks;
-    private Integer books;
-    private String url;
+	public Item(Integer id) {
+		this.id = id;
+	}
 
-    public Item() {
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Item(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public BigInteger getSalePrice() {
+		return salePrice;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setSalePrice(BigInteger salePrice) {
+		this.salePrice = salePrice;
+	}
 
-    public BigInteger getSalePrice() {
-        return salePrice;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setSalePrice(BigInteger salePrice) {
-        this.salePrice = salePrice;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public Integer getBooks() {
+		return books;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setBooks(Integer books) {
+		this.books = books;
+	}
 
-    public Integer getPromotions() {
-        return promotions;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public void setPromotions(Integer promotions) {
-        this.promotions = promotions;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-    public Integer getFeedbacks() {
-        return feedbacks;
-    }
-
-    public void setFeedbacks(Integer feedbacks) {
-        this.feedbacks = feedbacks;
-    }
-
-    public Integer getBooks() {
-        return books;
-    }
-
-    public void setBooks(Integer books) {
-        this.books = books;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    @Override
-    public String toString() {
-        return "model.Item[ id=" + id + " ]";
-    }
-
-    public List<Cart> getCartList() {
-        return cartList;
-    }
-
-    public void setCartList(List<Cart> cartList) {
-        this.cartList = cartList;
-    }
-
-    public List<OrderDetail> getOrderlineList() {
-        return orderlineList;
-    }
-
-    public void setOrderlineList(List<OrderDetail> orderlineList) {
-        this.orderlineList = orderlineList;
-    }
-    
 }

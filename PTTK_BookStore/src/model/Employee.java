@@ -4,7 +4,6 @@ package model;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Date;
-import java.util.List;
 
 public class Employee implements Serializable {
 
@@ -13,12 +12,7 @@ public class Employee implements Serializable {
     private BigInteger salary;
     private Date startDate;
     private Integer personID;
-    private BranchStore branchStoreID;
     private Person person;
-    
-    private List<EmployeeWorkschedule> employeeWorkscheduleList;
-    
-    private List<Allowance> allowanceList;
 
     public Employee() {
     }
@@ -59,63 +53,12 @@ public class Employee implements Serializable {
         this.personID = personID;
     }
 
-    public BranchStore getBranchStoreID() {
-        return branchStoreID;
-    }
-
-    public void setBranchStoreID(BranchStore branchStoreID) {
-        this.branchStoreID = branchStoreID;
-    }
-
     public Person getPerson() {
         return person;
     }
 
     public void setPerson(Person person) {
         this.person = person;
-    }
-
-    
-    public List<EmployeeWorkschedule> getEmployeeWorkscheduleList() {
-        return employeeWorkscheduleList;
-    }
-
-    public void setEmployeeWorkscheduleList(List<EmployeeWorkschedule> employeeWorkscheduleList) {
-        this.employeeWorkscheduleList = employeeWorkscheduleList;
-    }
-
-    
-    public List<Allowance> getAllowanceList() {
-        return allowanceList;
-    }
-
-    public void setAllowanceList(List<Allowance> allowanceList) {
-        this.allowanceList = allowanceList;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (personID != null ? personID.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Employee)) {
-            return false;
-        }
-        Employee other = (Employee) object;
-        if ((this.personID == null && other.personID != null) || (this.personID != null && !this.personID.equals(other.personID))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "model.Employee[ personID=" + personID + " ]";
     }
     
 }

@@ -3,13 +3,12 @@ package dao;
 
 import java.sql.Connection;
 import java.util.List;
-import java.util.Optional;
 
-import db.ConnectDB;
+import db.DBConnection;
 
 
 public interface BaseDAO<T> {
-    Connection con = ConnectDB.openConnect();
+    Connection con = DBConnection.openConnect();
     List<T> getAll();
 
     T get(int id);

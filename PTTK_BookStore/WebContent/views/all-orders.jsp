@@ -19,11 +19,11 @@
 	<div style="margin-left: 20%">
 		<%
 			OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
-				OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
-				List<OrderDetail> list = orderlineDAOImpl.getAll();
-				Locale localeVN = new Locale("vi", "VN");
-				NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
-				long total = 0;
+		OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
+		List<OrderDetail> list = orderlineDAOImpl.getAll();
+		Locale localeVN = new Locale("vi", "VN");
+		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+		long total = 0;
 		%>
 		<br>
 		<table>
@@ -35,7 +35,7 @@
 			</tr>
 			<%
 				for (OrderDetail i : list) {
-					total += Long.parseLong(i.getItemID().getSalePrice().toString());
+				total += Long.parseLong(i.getItemID().getSalePrice().toString());
 			%>
 			<tr>
 				<td><%=i.getOrderID().getOrderID()%></td>

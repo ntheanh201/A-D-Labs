@@ -13,62 +13,52 @@ import dao.impl.ShippingAddressDAOImpl;
 import model.Address;
 import model.ShippingAdd;
 
-
 public class ShippingAddressServlet extends HttpServlet {
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ShippingAddressServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ShippingAddressServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		try (PrintWriter out = response.getWriter()) {
+			/* TODO output your page here. You may use following sample code. */
+			out.println("<!DOCTYPE html>");
+			out.println("<html>");
+			out.println("<head>");
+			out.println("<title>Servlet ShippingAddressServlet</title>");
+			out.println("</head>");
+			out.println("<body>");
+			out.println("<h1>Servlet ShippingAddressServlet at " + request.getContextPath() + "</h1>");
+			out.println("</body>");
+			out.println("</html>");
+		}
+	}
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		processRequest(request, response);
+	}
 
-        AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
-        Address address = new Address();
-        address.setCity(request.getParameter("city"));
-        address.setDistrict(request.getParameter("district"));
-        address.setTown(request.getParameter("town"));
-        address.setDescription(request.getParameter("description"));
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-        int addressID = addressDAOImpl.save(address);
-        address.setId(addressID);
+		AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
+		Address address = new Address();
+		address.setCity(request.getParameter("city"));
+		address.setDistrict(request.getParameter("district"));
+		address.setHouseNumber(request.getParameter("houseNumber"));
+		address.setDescription(request.getParameter("description"));
 
-        ShippingAddressDAOImpl shippingAddressDAOImpl = new ShippingAddressDAOImpl();
-        ShippingAdd shippingaddress = new ShippingAdd();
-        shippingaddress.setAddressID(address);
-        shippingaddress.setNote(request.getParameter("note"));
-        int saID = shippingAddressDAOImpl.save(shippingaddress);
+		int addressID = addressDAOImpl.save(address);
+		address.setId(addressID);
 
-        request.getSession().setAttribute("shippingaddressID", saID);
-        response.sendRedirect("payment.jsp");
-    }
+		ShippingAddressDAOImpl shippingAddressDAOImpl = new ShippingAddressDAOImpl();
+		ShippingAdd shippingaddress = new ShippingAdd();
+		shippingaddress.setAddressID(address);
+		shippingaddress.setNote(request.getParameter("note"));
+		int saID = shippingAddressDAOImpl.save(shippingaddress);
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+		request.getSession().setAttribute("shippingaddressID", saID);
+		response.sendRedirect("payment.jsp");
+	}
 
 }

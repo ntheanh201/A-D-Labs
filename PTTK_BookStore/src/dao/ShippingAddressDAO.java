@@ -3,7 +3,6 @@ package dao;
 
 import model.ShippingAdd;
 
+public interface ShippingAddressDAO extends BaseDAO<ShippingAdd> {
 
-public interface ShippingAddressDAO extends BaseDAO<ShippingAdd>{
-    
 }

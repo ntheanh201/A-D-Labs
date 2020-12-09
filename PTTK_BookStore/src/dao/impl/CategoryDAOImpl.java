@@ -14,29 +14,28 @@ import java.util.logging.Logger;
 import dao.CategoryDAO;
 import model.Category;
 
-
-public class CategoryDAOImpl implements CategoryDAO{
+public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public List<Category> getAll() {
 		String sql = "SELECT * FROM category";
 		List<Category> categories = new ArrayList<Category>();
-        try {
-        	PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-        	while(rs.next()){
-        		Category category = new Category();
-        		category.setId(rs.getInt("id"));
-        		category.setName(rs.getString("Name"));
-        		category.setDescription(rs.getString("Description"));
-				
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Category category = new Category();
+				category.setId(rs.getInt("id"));
+				category.setName(rs.getString("Name"));
+				category.setDescription(rs.getString("Description"));
+
 				categories.add(category);
 			}
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-        return categories;
+		} catch (SQLException ex) {
+			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+			return null;
+		}
+		return categories;
 	}
 
 	@Override
@@ -54,15 +53,13 @@ public class CategoryDAOImpl implements CategoryDAO{
 	@Override
 	public void update(Category t) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void delete(Category t) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-    
-    
 }

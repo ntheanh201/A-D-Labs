@@ -36,9 +36,9 @@ html, body {
 			%>
 		</div>
 		<div style="width: 60%; height: 100%; float: left">
-			<jsp:include page="/items.jsp"></jsp:include>
+			<jsp:include page="/views/items.jsp"></jsp:include>
 		</div>
 		<div style="width: 10%; height: 100%; float: left">&nbsp;</div>
 	</div>
-</body>s
+</body>
 </html>

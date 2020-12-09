@@ -3,7 +3,6 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.math.BigInteger;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,12 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import dao.impl.ItemDAOImpl;
 import dao.impl.OnlineOrderDAOImpl;
 import dao.impl.OrderDetailDAOImpl;
-import dao.impl.VoucherDAOImpl;
 import model.Item;
 import model.Onlineorder;
 import model.OrderDetail;
 import model.ShippingAdd;
-import model.Voucher;
 
 public class CreateOrderServlet extends HttpServlet {
 
@@ -46,21 +43,10 @@ public class CreateOrderServlet extends HttpServlet {
 		ShippingAdd s = new ShippingAdd();
 		s.setId(shippingaddressID);
 
-		VoucherDAOImpl voucherDAOImpl = new VoucherDAOImpl();
-		Voucher v = new Voucher();
-		v.setName("0");
-		v.setDescription("0");
-		v.setDiscountAmount(new BigInteger("0"));
-		v.setDiscountPercent(0);
-
-		int voucherID = voucherDAOImpl.save(v);
-		v.setId(voucherID);
-
 		OnlineOrderDAOImpl oImpl = new OnlineOrderDAOImpl();
 		Onlineorder o = new Onlineorder();
 		o.setCustomerID(customerID);
 		o.setPaymentmethod(paymentmethod);
-		o.setVoucherID(v);
 		o.setShippingAddressID(s);
 		o.setState("Processing");
 
@@ -82,15 +68,4 @@ public class CreateOrderServlet extends HttpServlet {
 				redirectUrl.format(redirectUrl, "Success", "Make order successful, our staff will process it soon!"));
 
 	}
-
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
-
 }

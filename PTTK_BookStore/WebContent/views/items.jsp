@@ -24,7 +24,7 @@
 	%>
 	<div class="item">
 		<div class="itemImg">
-			<img src="<%="img?ImgUrl=" + item.getUrl()%>" alt="" width="200px"
+			<img src="<%="img?url=" + item.getUrl()%>" alt="" width="200px"
 				height="100%">
 		</div>
 		<div class="itemInfo">
@@ -32,6 +32,7 @@
 			<div style="width: 90%; height: 100%; float: left">
 				<p class="itemName" style="font-weight: bold; height: 36px"><%=item.getName()%></p>
 				<p class="itemAuthor"><%=item.getDescription()%></p>
+				
 				<form action="cart" method="POST">
 					<label class="itemPrice" style="text-decoration: underline"><%=currencyVN.format(item.getSalePrice())%>
 					</label> <input name="ItemID" hidden="true" value="<%=item.getId()%>">
@@ -39,6 +40,7 @@
 						value="<%=session.getAttribute("customerID")%>"> <input
 						type="submit" value="Add to Cart" style="float: right;">
 				</form>
+				
 			</div>
 			<div style="width: 50%; height: 100%; float: left">&nbsp;</div>
 		</div>

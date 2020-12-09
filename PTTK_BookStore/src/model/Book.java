@@ -2,148 +2,92 @@
 package model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
-import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-
 
 public class Book implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
-    private Integer id;
-    private String name;
-    private String publishYear;
-    private Integer quantity;
-    private BigInteger purchasePrice;
-    private int categories;
-    private List<Item> itemList;
-    private List<Category> categoryList;
-    private Author authorID;
-    private Publisher publisherID;
-    private List<ImportingRecord> importingrecordList;
+	private static final long serialVersionUID = 1L;
 
-    public Book() {
-    }
+	private Integer id;
+	private String name;
+	private int publishYear;
+	private int quantity;
+	private float price;
+	private Category category;
+	public float getPrice() {
+		return price;
+	}
 
-    public Book(Integer id) {
-        this.id = id;
-    }
+	public void setPrice(float price) {
+		this.price = price;
+	}
 
-    public Book(Integer id, int categories) {
-        this.id = id;
-        this.categories = categories;
-    }
+	public Category getCategory() {
+		return category;
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
-    public String getName() {
-        return name;
-    }
+	private Author authorID;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public Book() {
+	}
 
-    public String getPublishYear() {
-        return publishYear;
-    }
+	public Book(Integer id) {
+		this.id = id;
+	}
 
-    public void setPublishYear(String publishYear) {
-        this.publishYear = publishYear;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public Integer getQuantity() {
-        return quantity;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public BigInteger getPurchasePrice() {
-        return purchasePrice;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setPurchasePrice(BigInteger purchasePrice) {
-        this.purchasePrice = purchasePrice;
-    }
+	public int getPublishYear() {
+		return publishYear;
+	}
 
-    public int getCategories() {
-        return categories;
-    }
+	public void setPublishYear(int publishYear) {
+		this.publishYear = publishYear;
+	}
 
-    public void setCategories(int categories) {
-        this.categories = categories;
-    }
+	public Integer getQuantity() {
+		return quantity;
+	}
 
-    
-    public List<Item> getItemList() {
-        return itemList;
-    }
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
 
-    public void setItemList(List<Item> itemList) {
-        this.itemList = itemList;
-    }
+	public float getPurchasePrice() {
+		return price;
+	}
 
-    
-    public List<Category> getCategoryList() {
-        return categoryList;
-    }
+	public void setPurchasePrice(float price) {
+		this.price = price;
+	}
 
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
-    }
+	public Author getAuthorID() {
+		return authorID;
+	}
 
-    public Author getAuthorID() {
-        return authorID;
-    }
+	public void setAuthorID(Author authorID) {
+		this.authorID = authorID;
+	}
 
-    public void setAuthorID(Author authorID) {
-        this.authorID = authorID;
-    }
-
-    public Publisher getPublisherID() {
-        return publisherID;
-    }
-
-    public void setPublisherID(Publisher publisherID) {
-        this.publisherID = publisherID;
-    }
-
-    
-    public List<ImportingRecord> getImportingrecordList() {
-        return importingrecordList;
-    }
-
-    public void setImportingrecordList(List<ImportingRecord> importingrecordList) {
-        this.importingrecordList = importingrecordList;
-    }
-
-    @Override
-    public String toString() {
-        return "model.Book[ id=" + id + " ]";
-    }
-    
 }

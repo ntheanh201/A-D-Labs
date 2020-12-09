@@ -8,11 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.Optional;
 
 import dao.AddressDAO;
 import model.Address;
-import model.ShippingAdd;
 
 
 public class AddressDAOImpl implements AddressDAO{
@@ -35,7 +33,7 @@ public class AddressDAOImpl implements AddressDAO{
                 item.setId(rs.getInt("ID"));
                 item.setCity(rs.getString("City"));
                 item.setDistrict(rs.getString("District"));
-                item.setTown(rs.getString("Town"));
+                item.setHouseNumber(rs.getString("HouseNumber"));
                 item.setDescription(rs.getString("Description"));
             }
             return item;
@@ -53,7 +51,7 @@ public class AddressDAOImpl implements AddressDAO{
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, t.getCity());
             ps.setString(2, t.getDistrict());
-            ps.setString(3, t.getTown());
+            ps.setString(3, t.getHouseNumber());
             ps.setString(4, t.getDescription());
 
             int affectedRows = ps.executeUpdate();

@@ -50,14 +50,4 @@ public class CartServlet extends HttpServlet {
 		response.sendRedirect(redirectUrl.format(redirectUrl, "Success", "Added Item To Cart!"));
 	}
 
-	/**
-	 * Returns a short description of the servlet.
-	 *
-	 * @return a String containing servlet description
-	 */
-	@Override
-	public String getServletInfo() {
-		return "Short description";
-	}// </editor-fold>
-
 }

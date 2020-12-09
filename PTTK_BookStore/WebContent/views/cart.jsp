@@ -34,12 +34,12 @@ html, body {
 	<h1 style="margin-left: 10%">Your Cart</h1>
 	<div id="items">
 		<%
-		String customerID = "1";
+			String customerID = "1";
 		if (session.getAttribute("customerID") != null) {
 			customerID = session.getAttribute("customerID").toString();
 		}
-		
-			ItemDAOImpl itemDAOImpl = new ItemDAOImpl();
+
+		ItemDAOImpl itemDAOImpl = new ItemDAOImpl();
 		List<Item> items = itemDAOImpl.findItemInCart(Integer.parseInt(customerID));
 		Locale localeVN = new Locale("vi", "VN");
 		NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
@@ -51,7 +51,7 @@ html, body {
 		%>
 		<div class="item">
 			<div class="itemImg">
-				<img src="<%="img?ImgUrl=" + item.getUrl()%>" alt="" width="100%"
+				<img src="<%="img?url=" + item.getUrl()%>" alt="" width="100%"
 					height="100%">
 			</div>
 			<div class="itemName"><%=item.getName()%></div>
@@ -65,7 +65,8 @@ html, body {
 		<p style="font-weight: bold">
 			Total:
 			<%=currencyVN.format(total)%></p>
-		<br> <a href="shipping-address.jsp"><button>Create Order</button></a>
+		<br> <a href="shipping-address.jsp"><button>Create
+				Order</button></a>
 	</div>
 </body>
 </html>
