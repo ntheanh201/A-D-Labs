@@ -2,7 +2,8 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,28 +22,11 @@ public class LoginServlet extends HttpServlet {
 	AccountDAOImpl accountDAOImpl = new AccountDAOImpl();
 	Account account = new Account();
 
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		try (PrintWriter out = response.getWriter()) {
-			/* TODO output your page here. You may use following sample code. */
-			out.println("<!DOCTYPE html>");
-			out.println("<html>");
-			out.println("<head>");
-			out.println("<title>Servlet LoginServlet</title>");
-			out.println("</head>");
-			out.println("<body>");
-			out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-			out.println("</body>");
-			out.println("</html>");
-		}
-	}
-
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("hihi");
-		processRequest(request, response);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/login.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 	@Override
@@ -52,30 +36,26 @@ public class LoginServlet extends HttpServlet {
 		account.setPassword(request.getParameter("password"));
 
 		Account a = accountDAOImpl.checkAccount(account);
-		String redirectUrl = "/views/result.jsp?status=%s&detail=%s";
 		HttpSession httpSession = request.getSession();
 
-		int customerID = a.getId();
-		Person p = new PersonDAOImpl().getPersonByAccountID(customerID);
-		String name = p.getFullNameID().getLastName() + " " + p.getFullNameID().getMiddleName() + " "
-				+ p.getFullNameID().getFirstName();
-
-		System.out.println(customerID);
-		System.out.println(name);
-
-		httpSession.setAttribute("customerID", customerID);
-		httpSession.setAttribute("name", name);
-
 		if (a != null) {
-			if (a.getRole().equalsIgnoreCase("employee")) {
-				httpSession.setAttribute("role", "employee");
-				response.sendRedirect("/views/staff-dashboard.jsp");
-			} else {
-				httpSession.setAttribute("role", "customer");
-				response.sendRedirect("/views/customer-dashboard.jsp");
-			}
+			int customerID = a.getId();
+			Person p = new PersonDAOImpl().getPersonByAccountID(customerID);
+			String name = p.getFullNameID().getLastName() + " " + p.getFullNameID().getMiddleName() + " "
+					+ p.getFullNameID().getFirstName();
+
+			System.out.println(customerID);
+			System.out.println(name);
+
+			httpSession.setAttribute("customerID", customerID);
+			httpSession.setAttribute("name", name);
+			httpSession.setAttribute("role", a.getRole());
+			
+			response.sendRedirect("./dashboard");
 		} else {
-			response.sendRedirect(redirectUrl.format(redirectUrl, "Fail", "Authentication failed"));
+			request.setAttribute("message", "Authentication failed");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/login.jsp");
+			requestDispatcher.forward(request, response);
 		}
 	}
 

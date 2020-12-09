@@ -10,7 +10,7 @@
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<div style="margin-left: 20%">
 		<h1>Book Store Employee Dashboard</h1>
-		<br> <a href="all-orders.jsp" id="cart"><button>
+		<br> <a href="./orders" id="cart"><button>
 				<span>Handle Order</span>
 			</button></a>
 	</div>

@@ -16,14 +16,12 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public List<Account> getAll() {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public Account get(int id) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
@@ -57,14 +55,12 @@ public class AccountDAOImpl implements AccountDAO {
 
 	@Override
 	public void put(Account t) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public void delete(Account t) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	public Account checkAccount(Account t) {

@@ -40,7 +40,7 @@ public class CartServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String redirectUrl = "result.jsp?status=%s&detail=%s";
+		String redirectUrl = "./views/result.jsp?status=%s&detail=%s";
 		int itemID = Integer.parseInt(request.getParameter("ItemID"));
 		int customerID = Integer.parseInt(request.getParameter("CustomerID"));
 		CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();

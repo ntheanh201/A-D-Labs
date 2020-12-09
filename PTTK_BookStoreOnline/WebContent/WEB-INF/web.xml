@@ -52,10 +52,6 @@
         <servlet-name>createOrder</servlet-name>
         <url-pattern>/createOrder</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>OnlineOrderServlet</servlet-name>
-        <url-pattern>/OnlineOrderServlet</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

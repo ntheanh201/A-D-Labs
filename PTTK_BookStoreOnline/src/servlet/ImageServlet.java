@@ -1,4 +1,3 @@
-
 package servlet;
 
 import java.awt.image.BufferedImage;
@@ -20,7 +19,7 @@ public class ImageServlet extends HttpServlet {
 		String imgUrl = request.getParameter("url");
 		String pathToWeb = getServletContext().getRealPath(File.separator);
 		String fullImgUrl = pathToWeb + "/static/images/" + imgUrl;
-		 System.out.println("img file: " + fullImgUrl);
+//		 System.out.println("img file: " + fullImgUrl);
 		File f = new File(fullImgUrl);
 		BufferedImage bi = ImageIO.read(f);
 		OutputStream out = response.getOutputStream();

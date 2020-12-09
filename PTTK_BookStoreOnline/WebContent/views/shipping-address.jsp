@@ -15,7 +15,7 @@ html, body {
 	<h1 style="margin-left: 300px">We need shipping information for
 		your order...</h1>
 	<div style="margin-left: 30%; width: 20%; text-align: right">
-		<form action="shippingaddress" method="POST">
+		<form action="./shippingaddress" method="POST">
 			<div>
 				<label>City</label> <input type="text" name="city" /> <br /> <label>District</label>
 				<input type="text" name="district" /> <br /> <label>Town</label> <input

@@ -51,7 +51,7 @@ html, body {
 		%>
 		<div class="item">
 			<div class="itemImg">
-				<img src="<%="img?url=" + item.getUrl()%>" alt="" width="100%"
+				<img src="${pageContext.request.contextPath}/<%="img?url=" + item.getUrl()%>" alt="" width="100%"
 					height="100%">
 			</div>
 			<div class="itemName"><%=item.getName()%></div>

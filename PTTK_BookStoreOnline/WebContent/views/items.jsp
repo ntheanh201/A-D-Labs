@@ -24,7 +24,7 @@
 	%>
 	<div class="item">
 		<div class="itemImg">
-			<img src="<%="img?url=" + item.getUrl()%>" alt="" width="200px"
+			<img src="${pageContext.request.contextPath}/<%="img?url=" + item.getUrl()%>" alt="" width="200px"
 				height="100%">
 		</div>
 		<div class="itemInfo">

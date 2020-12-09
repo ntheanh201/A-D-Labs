@@ -1,23 +1,20 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Login</title>
-<style>
-html, body {
-	height: 100%;
-	margin: 0px;
-}
-</style>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/css/style.css" />
 </head>
 <body>
 	<jsp:include page="/common/header.jsp"></jsp:include>
-	<form action="../login" method="POST"
-		style="margin-left: 35%; margin-top: 10%">
-		<label>Username</label> <input type="text" name="username"
-			style="margin-left: 3%" /> <br /> <br /> <label>Password</label> <input
-			type="password" name="password" style="margin-left: 31px" /> <br />
-		<br /> <input type="submit" style="margin-left: 15%" value="Login" />
+	<div class="error-message">${message}</div>
+	<form action="" method="POST">
+		<label>Username</label> <input type="text" name="username" /> <br />
+		<label>Password</label> <input type="password" name="password" /> <br />
+		<input type="submit" value="Login" />
 	</form>
 </body>
 </html>

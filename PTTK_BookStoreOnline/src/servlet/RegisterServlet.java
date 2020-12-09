@@ -2,7 +2,8 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,35 +26,21 @@ import model.Person;
 
 public class RegisterServlet extends HttpServlet {
 
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		try (PrintWriter out = response.getWriter()) {
-			/* TODO output your page here. You may use following sample code. */
-			out.println("<!DOCTYPE html>");
-			out.println("<html>");
-			out.println("<head>");
-			out.println("<title>Servlet RegisterServlet</title>");
-			out.println("</head>");
-			out.println("<body>");
-			out.println("<h1>Servlet RegisterServlet at " + request.getContextPath() + "</h1>");
-			out.println("</body>");
-			out.println("</html>");
-		}
-	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		processRequest(request, response);
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/register.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		AccountDAOImpl accountDAOImpl = new AccountDAOImpl();
 		Account account = new Account();
-		String redirectUrl = "result.jsp?status=%s&detail=%s";
+		
 		account.setUsername(request.getParameter("username"));
 		account.setPassword(request.getParameter("password"));
 		account.setRole("customer");
@@ -84,7 +71,9 @@ public class RegisterServlet extends HttpServlet {
 		System.out.println(person.getDateOfBirth());
 		person.setIdCard(request.getParameter("idcard"));
 		if (accountDAOImpl.checkUsernameExist(account.getUsername())) {
-			response.sendRedirect(redirectUrl.format(redirectUrl, "Fail", "Username existed"));
+			request.setAttribute("message", "Username existed");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/register.jsp");
+			requestDispatcher.forward(request, response);
 		} else {
 			int accountID = accountDAOImpl.post(account);
 			int fullnameID = fullnameDAOImpl.post(fullname);
@@ -114,7 +103,10 @@ public class RegisterServlet extends HttpServlet {
 			customer.getCartID().setId(cartID);
 
 			customerDAOImpl.post(customer);
-			response.sendRedirect(redirectUrl.format(redirectUrl, "Success", "Register successful!"));
+			
+			request.setAttribute("message", "Register successfully. Login!");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/login.jsp");
+			requestDispatcher.forward(request, response);
 		}
 	}
 }
