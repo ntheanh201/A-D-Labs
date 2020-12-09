@@ -25,8 +25,8 @@
         <servlet-class>servlet.CreateOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>OnlineOrderServlet</servlet-name>
-        <servlet-class>servlet.OnlineOrderServlet</servlet-class>
+        <servlet-name>HandleOrderServlet</servlet-name>
+        <servlet-class>servlet.HandleOrderServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>

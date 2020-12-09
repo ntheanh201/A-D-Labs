@@ -11,7 +11,7 @@ public class Order implements Serializable {
     private Integer id;
     private String type;
     private Date date;
-    private Onlineorder onlineorder;
+    private OnlineOrder onlineorder;
 
     public Order() {
     }
@@ -44,11 +44,11 @@ public class Order implements Serializable {
         this.date = date;
     }
 
-    public Onlineorder getOnlineorder() {
+    public OnlineOrder getOnlineorder() {
         return onlineorder;
     }
 
-    public void setOnlineorder(Onlineorder onlineorder) {
+    public void setOnlineorder(OnlineOrder onlineorder) {
         this.onlineorder = onlineorder;
     }
 

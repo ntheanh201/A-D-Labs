@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import controller.OrderDetailDAO;
-import model.Onlineorder;
+import model.OnlineOrder;
 import model.OrderDetail;
 
 public class OrderDetailDAOImpl implements OrderDetailDAO {
@@ -22,7 +22,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 	public List<OrderDetail> getAll() {
 		List<OrderDetail> list = new ArrayList<>();
 		ItemDAOImpl aOImpl = new ItemDAOImpl();
-		String sql = "Select * from book_store.orderline ORDER BY OrderID";
+		String sql = "Select * from orderline ORDER BY OrderID";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -30,7 +30,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 				OrderDetail o = new OrderDetail();
 				o.setId(rs.getInt("ID"));
 				o.setItemID(aOImpl.get(rs.getInt("ItemID")));
-				o.setOrderID(new Onlineorder(rs.getInt("OrderID")));
+				o.setOrderID(new OnlineOrder(rs.getInt("OrderID")));
 				o.setQuantity(rs.getInt("Quantity"));
 				System.out.println(o);
 				list.add(o);
@@ -71,7 +71,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 	public List<OrderDetail> getOrderLinesByOrderId(int orderID) {
 		List<OrderDetail> list = new ArrayList<>();
 		ItemDAOImpl aOImpl = new ItemDAOImpl();
-		String sql = "Select * from book_store.orderline where OrderID = ?";
+		String sql = "Select * from orderline where OrderID = ?";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, orderID);
@@ -81,7 +81,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 				OrderDetail o = new OrderDetail();
 				o.setId(rs.getInt("ID"));
 				o.setItemID(aOImpl.get(rs.getInt("ItemID")));
-				o.setOrderID(new Onlineorder(orderID));
+				o.setOrderID(new OnlineOrder(orderID));
 				o.setQuantity(rs.getInt("Quantity"));
 				System.out.println(o);
 				list.add(o);
@@ -96,7 +96,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 	@Override
 	public int post(OrderDetail t) {
 		System.out.println(t);
-		String sql = "INSERT INTO book_store.orderline (orderID, itemID)" + " VALUES(?,?);";
+		String sql = "INSERT INTO orderline (orderID, itemID)" + " VALUES(?,?);";
 		int key = -1;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -124,17 +124,15 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 
 	@Override
 	public void put(OrderDetail t) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public void delete(OrderDetail t) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new OrderDetailDAOImpl().getOrderLinesByOrderId(1));
+//		System.out.println(new OrderDetailDAOImpl().getOrderLinesByOrderId(1));
 	}
 }

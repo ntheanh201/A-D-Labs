@@ -11,26 +11,26 @@ import java.util.List;
 
 import controller.OnlineOrderDAO;
 import model.Item;
-import model.Onlineorder;
+import model.OnlineOrder;
 import model.ShippingAdd;
 
 public class OnlineOrderDAOImpl implements OnlineOrderDAO {
 
 	@Override
-	public List<Onlineorder> getAll() {
+	public List<OnlineOrder> getAll() {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
 	@Override
-	public Onlineorder get(int id) {
+	public OnlineOrder get(int id) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}
 
-	public Onlineorder searchOnlineOrders(int orderId) throws SQLException, ClassNotFoundException {
-		Onlineorder re = new Onlineorder();
-		String sql = "SELECT * FROM book_store.onlineorder WHERE OrderID = ? ";
+	public OnlineOrder searchOnlineOrders(int orderId) throws SQLException, ClassNotFoundException {
+		OnlineOrder re = new OnlineOrder();
+		String sql = "SELECT * FROM onlineorder WHERE OrderID = ? ";
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, orderId);
 		ResultSet rs = ps.executeQuery();
@@ -44,7 +44,7 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
 	}
 
 	@Override
-	public int post(Onlineorder t) {
+	public int post(OnlineOrder t) {
 		System.out.println(t);
 		String sql = "INSERT INTO book_store.onlineorder (state, customerID, shippingaddressID, paymentmethod)"
 				+ " VALUES(?,?,?,?);";
@@ -76,9 +76,9 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
 	}
 
 	@Override
-	public void put(Onlineorder t) {
+	public void put(OnlineOrder t) {
 		System.out.println(t.toString());
-		String sql = "UPDATE  book_store.onlineorder SET State = ?  WHERE OrderID = ? ;";
+		String sql = "UPDATE onlineorder SET State = ?  WHERE OrderID = ? ;";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, t.getState());
@@ -90,7 +90,7 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
 	}
 
 	@Override
-	public void delete(Onlineorder t) {
+	public void delete(OnlineOrder t) {
 		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
 																		// Tools | Templates.
 	}

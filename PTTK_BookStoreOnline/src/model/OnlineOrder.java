@@ -3,7 +3,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Onlineorder implements Serializable {
+public class OnlineOrder implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String state;
@@ -13,14 +13,14 @@ public class Onlineorder implements Serializable {
 	private String paymentmethod;
 	private ShippingAdd shippingAddressID;
 
-	public Onlineorder() {
+	public OnlineOrder() {
 	}
 
-	public Onlineorder(Integer orderID) {
+	public OnlineOrder(Integer orderID) {
 		this.orderID = orderID;
 	}
 
-	public Onlineorder(Integer orderID, int customerID) {
+	public OnlineOrder(Integer orderID, int customerID) {
 		this.orderID = orderID;
 		this.customerID = customerID;
 	}

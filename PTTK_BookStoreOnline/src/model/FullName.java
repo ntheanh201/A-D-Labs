@@ -51,4 +51,10 @@ public class FullName implements Serializable {
 		this.lastName = lastName;
 	}
 
+	@Override
+	public String toString() {
+		return "FullName [id=" + id + ", firstName=" + firstName + ", middleName=" + middleName + ", lastName="
+				+ lastName + "]";
+	}
+
 }

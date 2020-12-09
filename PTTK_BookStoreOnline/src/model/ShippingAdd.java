@@ -40,5 +40,10 @@ public class ShippingAdd implements Serializable {
     public void setAddressID(Address addressID) {
         this.addressID = addressID;
     }
+
+	@Override
+	public String toString() {
+		return "ShippingAdd [id=" + id + ", note=" + note + ", addressID=" + addressID + "]";
+	}
     
 }

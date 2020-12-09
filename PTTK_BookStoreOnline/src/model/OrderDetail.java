@@ -11,7 +11,7 @@ public class OrderDetail implements Serializable {
     private Integer quantity;
     private Integer cutomerID;
     private Item itemID;    
-    private Onlineorder orderID;
+    private OnlineOrder orderID;
 
     public OrderDetail() {
     }
@@ -52,11 +52,11 @@ public class OrderDetail implements Serializable {
         this.itemID = itemID;
     }
 
-    public Onlineorder getOrderID() {
+    public OnlineOrder getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(Onlineorder orderID) {
+    public void setOrderID(OnlineOrder orderID) {
         this.orderID = orderID;
     }
     

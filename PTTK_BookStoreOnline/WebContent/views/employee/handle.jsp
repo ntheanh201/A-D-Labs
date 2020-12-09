@@ -13,7 +13,7 @@
 <%@page import="model.OrderDetail"%>
 <%@page import="java.util.List"%>
 <%@page import="controller.impl.OrderDetailDAOImpl"%>
-<%@page import="model.Onlineorder"%>
+<%@page import="model.OnlineOrder"%>
 <%@page import="controller.impl.OnlineOrderDAOImpl"%>
 <%@page import="controller.impl.PersonDAOImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -34,7 +34,7 @@ html, body {
 	<div>
 		<%
 			OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
-		Onlineorder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID")));
+		OnlineOrder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(request.getParameter("orderID")));
 		OrderDetailDAOImpl orderDetailDAOImpl = new OrderDetailDAOImpl();
 		CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();
 		Customer cus = customerDAOImpl.get(onlineorder.getCustomerID());
@@ -107,7 +107,7 @@ html, body {
 				style="color: firebrick"><%=shipadd.getNote()%></span>
 		</div>
 
-		<form action="OnlineOrderServlet" method="POST">
+		<form action="HandleOrderServlet" method="POST">
 			<input type="text" name="orderID"
 				value="<%=request.getParameter("orderID")%>" hidden="true" />
 			<div>

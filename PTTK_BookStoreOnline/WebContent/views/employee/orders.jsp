@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,21 +21,19 @@
 			</tr>
 			<c:forEach var="item" begin="0" items="${list}">
 				<tr>
-					<%-- <td><%=i.getOrderID().getOrderID()%></td>
-				<td><%=i.getItemID().getId()%></td>
-				<td><%=i.getItemID().getName()%></td>
-				<td><%=currencyVN.format(i.getItemID().getSalePrice())%></td> --%>
 					<td>${item.getOrderID().getOrderID()}</td>
 					<td>${item.getItemID().getId()}</td>
-					<td>${item.getOrderID().getName()}</td>
-					<td>${currencyVN.format(item.getItemID().getSalePrice())}</td>
+					<td>${item.getItemID().getName()}</td>
+					<td>
+					<fmt:setLocale value = "vi_VN"/>
+					<fmt:formatNumber
+							value="${item.getItemID().getSalePrice()}" type="currency" /></td>
 				</tr>
 			</c:forEach>
 		</table>
-		<p style="font-weight: bold">Total: ${currencyVN.format(total)}</p>
+		<p style="font-weight: bold">Total: ${total}</p>
 		<br>
-		<form action="/handle-order" method="GET"
-			style="text-align: center;">
+		<form action="./handle-order" method="GET" style="text-align: center;">
 			<input type="text" name="orderID" placeholder="Order ID...">
 			<input type="submit" style="margin-left: 3%" value="Handle">
 		</form>

@@ -12,16 +12,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Book Store | Items</title>
 <link rel="stylesheet" href="css/items.css">
-<style>
-/*            div{
-                            width: 20%;
-                            text-align: right;
-                        }*/
-html, body {
-	height: 100%;
-	margin: 0px;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="/common/header.jsp"></jsp:include>

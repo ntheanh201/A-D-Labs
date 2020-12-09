@@ -6,9 +6,7 @@
 	<div>
 		<form action="../views/products.jsp" method="GET">
 			<input type="text" name="item_name" placeholder="Search"
-				style="width: 600px; height: 40px; float: left; border: none" /> <input
-				type="image" style="width: 50px; height: 40px; float: left"
-				src="img?url=searchbtn.png" />
+				style="width: 600px; height: 40px; float: left; border: none" />
 		</form>
 	</div>
 	<%

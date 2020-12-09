@@ -31,11 +31,13 @@ public class AddressDAOImpl implements AddressDAO{
 
             while (rs.next()) {
                 item.setId(rs.getInt("ID"));
+                item.setHouseNumber(rs.getString("HouseNumber"));
                 item.setCity(rs.getString("City"));
                 item.setDistrict(rs.getString("District"));
-                item.setHouseNumber(rs.getString("HouseNumber"));
+                item.setHouseNumber(rs.getString("Town"));
                 item.setDescription(rs.getString("Description"));
             }
+            System.out.println(item);
             return item;
         } catch (SQLException ex) {
             return null;

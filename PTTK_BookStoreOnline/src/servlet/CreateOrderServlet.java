@@ -13,7 +13,7 @@ import controller.impl.ItemDAOImpl;
 import controller.impl.OnlineOrderDAOImpl;
 import controller.impl.OrderDetailDAOImpl;
 import model.Item;
-import model.Onlineorder;
+import model.OnlineOrder;
 import model.OrderDetail;
 import model.ShippingAdd;
 
@@ -44,7 +44,7 @@ public class CreateOrderServlet extends HttpServlet {
 		s.setId(shippingaddressID);
 
 		OnlineOrderDAOImpl oImpl = new OnlineOrderDAOImpl();
-		Onlineorder o = new Onlineorder();
+		OnlineOrder o = new OnlineOrder();
 		o.setCustomerID(customerID);
 		o.setPaymentmethod(paymentmethod);
 		o.setShippingAddressID(s);

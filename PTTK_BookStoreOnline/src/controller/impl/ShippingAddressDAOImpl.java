@@ -35,6 +35,7 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 				item.setNote(rs.getString("Note"));
 				item.setAddressID(addressDAOImpl.get(rs.getInt("addressID")));
 			}
+			System.out.println("adderssID: " + rs.getInt("addressID"));
 			return item;
 		} catch (SQLException ex) {
 			return null;

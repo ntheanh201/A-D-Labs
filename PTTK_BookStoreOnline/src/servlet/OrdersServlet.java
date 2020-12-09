@@ -35,7 +35,7 @@ public class OrdersServlet extends HttpServlet {
 			}
 			request.setAttribute("list", list);
 			request.setAttribute("currency", currencyVN);
-			request.setAttribute("total", total);
+			request.setAttribute("total", currencyVN.format(total));
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/employee/orders.jsp");
 			requestDispatcher.forward(request, response);
 		} else {
