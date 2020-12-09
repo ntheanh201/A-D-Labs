@@ -48,7 +48,7 @@ public class CreateOrderServlet extends HttpServlet {
 		o.setCustomerID(customerID);
 		o.setPaymentmethod(paymentmethod);
 		o.setShippingAddressID(s);
-		o.setState("Processing");
+		o.setState("Checking");
 
 		int orderID = oImpl.post(o);
 		o.setOrderID(orderID);
@@ -63,7 +63,7 @@ public class CreateOrderServlet extends HttpServlet {
 			orderlineDAOImpl.post(o1);
 		}
 
-		String redirectUrl = "result.jsp?status=%s&detail=%s";
+		String redirectUrl = "./views/result.jsp?status=%s&detail=%s";
 		response.sendRedirect(
 				redirectUrl.format(redirectUrl, "Success", "Make order successful, our staff will process it soon!"));
 

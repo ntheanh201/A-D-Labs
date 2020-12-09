@@ -58,7 +58,7 @@ public class ShippingAddressServlet extends HttpServlet {
 		int saID = shippingAddressDAOImpl.post(shippingaddress);
 
 		request.getSession().setAttribute("shippingaddressID", saID);
-		response.sendRedirect("payment.jsp");
+		response.sendRedirect("./views/payment.jsp");
 	}
 
 }
