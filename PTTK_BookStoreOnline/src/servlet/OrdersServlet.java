@@ -39,7 +39,20 @@ public class OrdersServlet extends HttpServlet {
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/employee/orders.jsp");
 			requestDispatcher.forward(request, response);
 		} else {
+			int personID = Integer.parseInt(httpSession.getAttribute("personID").toString());
+			OrderDetailDAOImpl orderlineDAOImpl = new OrderDetailDAOImpl();
+			List<OrderDetail> list = orderlineDAOImpl.getOrderLinesByUser(personID);
+			Locale localeVN = new Locale("vi", "VN");
+			NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
 			
+			long total = 0;
+			
+			for (OrderDetail i : list) {
+				total += Long.parseLong(i.getItemID().getSalePrice().toString());
+			}
+			request.setAttribute("list", list);
+			request.setAttribute("currency", currencyVN);
+			request.setAttribute("total", currencyVN.format(total));
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/customer/orders.jsp");
 			requestDispatcher.forward(request, response);
 		}

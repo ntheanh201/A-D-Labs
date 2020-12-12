@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +10,14 @@
 	<jsp:include page="/common/header.jsp"></jsp:include>
 	<div style="margin-left: 20%">
 		<h1>Customer Dashboard</h1>
-		<br /> <a href="./views/products.jsp"><button>
-				<span>All Items</span>
-			</button></a> <br /> <a href="./views/cart.jsp"><button>
+		<div class="message">${message}</div>
+		<a href="./orders"><button>
+				<span>Orders</span>
+			</button></a>
+		<a href="./views/cart.jsp"><button>
 				<span>Cart</span>
 			</button></a>
+		<jsp:include page="/views/items.jsp"></jsp:include>
 	</div>
 </body>
 </html>

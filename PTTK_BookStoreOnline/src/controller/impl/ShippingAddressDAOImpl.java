@@ -7,7 +7,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import controller.ShippingAddressDAO;
 import model.ShippingAdd;
@@ -16,8 +19,25 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 
 	@Override
 	public List<ShippingAdd> getAll() {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+//		String sql = "SELECT * FROM shippingaddress";
+//		List<ShippingAdd> categories = new ArrayList<ShippingAdd>();
+//		try {
+//			PreparedStatement ps = con.prepareStatement(sql);
+//			ResultSet rs = ps.executeQuery();
+//			while (rs.next()) {
+//				ShippingAdd category = new ShippingAdd();
+//				category.setId(rs.getInt("id"));
+//				category.setName(rs.getString("Name"));
+//				category.setDescription(rs.getString("Description"));
+//
+//				categories.add(category);
+//			}
+//		} catch (SQLException ex) {
+//			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+//			return null;
+//		}
+//		return categories;
+		return null;
 	}
 
 	@Override
@@ -34,6 +54,7 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 				item.setId(rs.getInt("ID"));
 				item.setNote(rs.getString("Note"));
 				item.setAddressID(addressDAOImpl.get(rs.getInt("addressID")));
+				return item;
 			}
 			System.out.println("adderssID: " + rs.getInt("addressID"));
 			return item;
@@ -68,6 +89,29 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 			return key;
 		}
 		return key;
+	}
+	
+	public ShippingAdd getByPerson(int id) {
+		String sql = "SELECT * FROM shippingaddress WHERE personID = ?";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			ShippingAdd item = new ShippingAdd();
+			AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
+
+			while (rs.next()) {
+				item.setId(rs.getInt("ID"));
+				item.setNote(rs.getString("Note"));
+				item.setAddressID(addressDAOImpl.get(rs.getInt("addressID")));
+				item.setPersonID(rs.getInt("personID"));
+				return item;
+			}
+			System.out.println("adderssID: " + rs.getInt("addressID"));
+			return item;
+		} catch (SQLException ex) {
+			return null;
+		}
 	}
 
 	@Override

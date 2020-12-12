@@ -1,53 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Register</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Service Provider</title>
+<link rel="stylesheet" href="./assets/css/style.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/css/style.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/css/auth.css" />
 </head>
 <body>
-	<jsp:include page="/common/header.jsp"></jsp:include>
-	<h1>Register</h1>
-	<div>
-		<form action="register" method="POST">
-			<div>
-				<label>Username</label> <input type="text" name="username" /> <br />
-				<label>Password</label> <input type="password" name="password" />
+	<section class="main-content">
+		<div class="row">
+			<div class="column barber-bgr"></div>
+			<div class="column login-page">
+				<div class="content-header">
+					<button class="btn btn-get-barber">Button</button>
+				</div>
+				<div class="content-container">
+					<div class="content-body">
+						<div class="branding">
+							<img src="" alt="" /> <span>Branding</span>
+						</div>
+						<div class="title">Signup</div>
+						<form action="register" class="login-form" method="POST">
+							<input
+								type="text" placeholder="Username *" required
+								name="username" />
+							<input type="text" placeholder="First name *" name="firstName"
+								required /> <input type="text" placeholder="Middle name *"
+								name="middleName" required /> <input type="text"
+								placeholder="Last name *" name="lastName" required /><input
+								type="password" placeholder="Password *" required
+								name="password" />
+							<div class="gender-select">
+								<input type="radio" name="gender" value="Male" />Male <input
+									type="radio" name="gender" value="Female" />Female <input
+									type="radio" name="gender" value="Undefined" />Undefined
+							</div>
+							<div>
+								<input type="text" placeholder="Email" name="email" />
+								<input type="text" placeholder="Phone Number" name="phoneNumber"
+								 />
+							</div>
+							<input type="date" name="dateOfBirth" placeholder="DateOfBirth" />
+							<div class="address">
+								<input type="text" placeholder="Street" name="street" />
+								<input type="text" placeholder="District" name="district" />
+								<input type="text" placeholder="City" name="city" />
+							</div>
+							<div class="error-message">${message}</div>
+
+							<button class="btn btn-submit">Register</button>
+						</form>
+						<div class="external-signin">
+							<div class="external-signin-title">
+								<div class="wing"></div>
+								<div class="external-title">Or sign in with</div>
+								<div class="wing"></div>
+							</div>
+							<div class="extern-button">
+								<button class="btn btn-external">
+									<img src="./assets/image/gg.svg" alt="" /> <span>Google</span>
+								</button>
+								<button class="btn btn-external btn-fb">
+									<div class="rounded">
+										<img src="./assets/image/fb.svg" alt="" />
+									</div>
+									<span>Facebook</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-footer">
+						<span>Have an account?</span> <a href="./login">Login</a>
+					</div>
+				</div>
 			</div>
-			<br />
-			<div>
-				<label>FirstName</label> <input type="text" name="firstName" /> <br />
-				<label>MiddleName</label> <input type="text" name="middleName" /> <br />
-				<label>LastName</label> <input type="text" name="lastName" />
-			</div>
-			<br />
-			<div>
-			Gender: 
-				<input
-					type="radio" name="gender" value="Male" />Male <input type="radio"
-					name="gender" value="Female" />Female <input type="radio"
-					name="gender" value="Undefined" />Undefined <br /> <br /> <label>Date
-					Of Birth</label> <input type="date" name="dateOfBirth" />
-			</div>
-			<br />
-			<!-- <div>
-				<label>PhoneNumber</label> <input type="text" name="phonenumber" />
-				<br /> <label>Email</label> <input type="text" name="email" /> <br />
-				<br /> <label style="margin-right: 70px">Address</label> <br />
-				<label>HouseNumber</label>
-				<input type="text" name="houseNumber" /> <br />
-				<label>Street</label>
-				<input
-					type="text" name="street" /> <br />
-				<label>District</label> <input
-					type="text" name="district" /> <br />
-				<label>Description</label>
-				<input
-					type="text" name="desciption" />
-			</div>
-			<br />  -->
-			<input type="submit"
-				value="Register" />
-		</form>
-	</div>
+		</div>
+	</section>
 </body>
 </html>
+
+
+

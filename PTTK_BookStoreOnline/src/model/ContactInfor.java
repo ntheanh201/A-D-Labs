@@ -16,6 +16,12 @@ public class ContactInfor implements Serializable {
 	public ContactInfor() {
 	}
 
+	public ContactInfor(String email, String phoneNumber) {
+		super();
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+	}
+
 	public ContactInfor(Integer id) {
 		this.id = id;
 	}

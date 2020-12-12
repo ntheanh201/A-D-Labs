@@ -84,10 +84,10 @@ public class FullnameDAOImpl implements FullnameDAO {
 	}
 
 	public static void main(String[] args) {
-		FullName f = new FullName();
-		f.setFirstName("x");
-		f.setMiddleName("y");
-		f.setLastName("z");
-		System.out.println(new FullnameDAOImpl().post(f));
+//		FullName f = new FullName();
+//		f.setFirstName("x");
+//		f.setMiddleName("y");
+//		f.setLastName("z");
+//		System.out.println(new FullnameDAOImpl().post(f));
 	}
 }

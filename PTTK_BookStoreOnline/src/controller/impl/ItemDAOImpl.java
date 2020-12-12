@@ -64,6 +64,7 @@ public class ItemDAOImpl implements ItemDAO {
 				item.setDescription(rs.getString("description"));
 				item.setSalePrice(BigInteger.valueOf(rs.getLong("saleprice")));
 				item.setUrl("url");
+				return item;
 			}
 			return item;
 		} catch (SQLException ex) {

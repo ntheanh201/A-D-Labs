@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import controller.impl.CustomerDAOImpl;
 import controller.impl.FullnameDAOImpl;
@@ -38,21 +39,25 @@ public class HandleOrderServlet extends HttpServlet {
 
 	private void handleOrder(HttpServletRequest request) {
 		String orderID = request.getParameter("orderID");
-
+		HttpSession httpSession = request.getSession();
+		int personID = Integer.parseInt(httpSession.getAttribute("personID").toString());
+		total = 0;
 		try {
 			OnlineOrderDAOImpl aOImpl = new OnlineOrderDAOImpl();
 			OnlineOrder onlineorder = aOImpl.searchOnlineOrders(Integer.parseInt(orderID));
 			OrderDetailDAOImpl orderDetailDAOImpl = new OrderDetailDAOImpl();
-			CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();
-			Customer cus = customerDAOImpl.get(onlineorder.getCustomerID());
+//			CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();
+//			Customer cus = customerDAOImpl.get(onlineorder.getCustomerID());
 			PersonDAOImpl personDAOImpl = new PersonDAOImpl();
 			
-			Person person = personDAOImpl.get(cus.getPersonID());
+			Person person = personDAOImpl.get(personID);
+			System.out.println("person: " + person);
 			
 			FullnameDAOImpl fullnameDAOImpl = new FullnameDAOImpl();
 			fullName = fullnameDAOImpl.get(person.getFullNameID().getId());
 			ShippingAddressDAOImpl shippingAddressDAOImpl = new ShippingAddressDAOImpl();
 			shipadd = shippingAddressDAOImpl.get(onlineorder.getShippingAddressID().getId());
+			
 			list = orderDetailDAOImpl.getOrderLinesByOrderId(Integer.parseInt(orderID));
 			Locale localeVN = new Locale("vi", "VN");
 			currencyVN = NumberFormat.getCurrencyInstance(localeVN);
@@ -60,7 +65,7 @@ public class HandleOrderServlet extends HttpServlet {
 				total += Long.parseLong(i.getItemID().getSalePrice().toString());
 			}
 			
-			System.out.println(shipadd);
+			System.out.println("shipadd: " + shipadd);
 			
 			request.setAttribute("list", list);
 			request.setAttribute("currency", currencyVN);
@@ -68,6 +73,7 @@ public class HandleOrderServlet extends HttpServlet {
 			request.setAttribute("fullName", fullName);
 			request.setAttribute("shipadd", shipadd);
 			request.setAttribute("onlineorder", onlineorder);
+			request.setAttribute("person", person);
 		} catch (SQLException ex) {
 			Logger.getLogger(HandleOrderServlet.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (NumberFormatException e) {

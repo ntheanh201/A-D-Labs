@@ -49,17 +49,16 @@ public class PersonDAOImpl implements PersonDAO {
 
 	@Override
 	public int post(Person t) {
-		String sql = "INSERT INTO book_store.person (dateofbirth, gender, idcard, accountid, fullnameid, contactinforid)"
-				+ "VALUES(?,?,?,?,?,?);";
+		String sql = "INSERT INTO book_store.person (dateofbirth, gender, accountid, fullnameid, contactinforid)"
+				+ "VALUES(?,?,?,?,?);";
 		int key = -1;
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, t.getDateOfBirth());
 			ps.setString(2, t.getGender());
-			ps.setString(3, t.getIdCard());
-			ps.setInt(4, t.getAccountID().getId());
-			ps.setInt(5, t.getFullNameID().getId());
-			ps.setInt(6, t.getContactInforID().getId());
+			ps.setInt(3, t.getAccountID().getId());
+			ps.setInt(4, t.getFullNameID().getId());
+			ps.setInt(5, t.getContactInforID().getId());
 
 			int affectedRows = ps.executeUpdate();
 

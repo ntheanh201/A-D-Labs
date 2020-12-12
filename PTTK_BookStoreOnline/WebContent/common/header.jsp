@@ -4,7 +4,7 @@
 		<a href="${pageContext.request.contextPath}">BookStore</a>
 	</div>
 	<div>
-		<form action="../views/products.jsp" method="GET">
+		<form action="./views/products.jsp" method="GET">
 			<input type="text" name="item_name" placeholder="Search"
 				style="width: 600px; height: 40px; float: left; border: none" />
 		</form>

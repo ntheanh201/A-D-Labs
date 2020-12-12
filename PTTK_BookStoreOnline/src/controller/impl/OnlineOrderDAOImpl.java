@@ -24,8 +24,25 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
 
 	@Override
 	public OnlineOrder get(int id) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		OnlineOrder re = new OnlineOrder();
+		String sql = "SELECT * FROM onlineorder WHERE OrderID = ? ";
+		PreparedStatement ps;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			rs.first();
+			re.setCustomerID(rs.getInt("CustomerID"));
+			re.setPaymentmethod(rs.getString("paymentmethod"));
+			re.setOrderID(id);
+			re.setShippingAddressID(new ShippingAdd(rs.getInt("ShippingAddressID")));
+			re.setState(rs.getString("State"));
+			return re;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return re;
 	}
 
 	public OnlineOrder searchOnlineOrders(int orderId) throws SQLException, ClassNotFoundException {
@@ -65,6 +82,7 @@ public class OnlineOrderDAOImpl implements OnlineOrderDAO {
 			try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
 				if (generatedKeys.next()) {
 					key = generatedKeys.getInt(1);
+					System.out.println("OrderLinekey: " + key);
 				} else {
 					throw new SQLException("Creating order failed, no ID obtained.");
 				}

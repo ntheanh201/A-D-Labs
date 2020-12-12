@@ -3,13 +3,17 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import controller.impl.CartDAOImpl;
 import controller.impl.CustomerDAOImpl;
+import model.Customer;
 
 public class CartServlet extends HttpServlet {
 	CartDAOImpl cartDAOImpl = new CartDAOImpl();
@@ -40,14 +44,22 @@ public class CartServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String redirectUrl = "./views/result.jsp?status=%s&detail=%s";
+		HttpSession httpSession = request.getSession();
+				
 		int itemID = Integer.parseInt(request.getParameter("ItemID"));
-		int customerID = Integer.parseInt(request.getParameter("CustomerID"));
+		int personID = (int) httpSession.getAttribute("personID");
+		System.out.println(itemID);
+		System.out.println(personID);
+		
 		CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();
-		int cartID = customerDAOImpl.get(customerID).getCartID().getId();
-		System.out.println(itemID + " " + cartID);
+		Customer c = customerDAOImpl.get(personID);
+		System.out.println(c);
+		int cartID = c.getCartID().getId();
 		cartDAOImpl.addNewItemToCart(itemID, cartID);
-		response.sendRedirect(redirectUrl.format(redirectUrl, "Success", "Added Item To Cart!"));
+		
+		request.setAttribute("message", "Add item to cart successfully");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/customer/dashboard.jsp");
+		requestDispatcher.forward(request, response);
 	}
 
 }

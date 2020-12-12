@@ -12,77 +12,80 @@ import java.util.List;
 import controller.AddressDAO;
 import model.Address;
 
+public class AddressDAOImpl implements AddressDAO {
 
-public class AddressDAOImpl implements AddressDAO{
+	@Override
+	public List<Address> getAll() {
+		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+																		// Tools | Templates.
+	}
 
-    @Override
-    public List<Address> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+	@Override
+	public Address get(int id) {
+		String sql = "SELECT * FROM address WHERE ID = ?";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			Address item = new Address();
 
-    @Override
-    public Address get(int id) {
-    	String sql = "SELECT * FROM address WHERE ID = ?";
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-            Address item = new Address();
+			while (rs.next()) {
+				item.setId(rs.getInt("ID"));
+				item.setCity(rs.getString("City"));
+				item.setDistrict(rs.getString("District"));
+				item.setStreet(rs.getString("Street"));
+				item.setDescription(rs.getString("Description"));
+				return item;
+			}
+			System.out.println("ADD: " + item);
+			return item;
 
-            while (rs.next()) {
-                item.setId(rs.getInt("ID"));
-                item.setHouseNumber(rs.getString("HouseNumber"));
-                item.setCity(rs.getString("City"));
-                item.setDistrict(rs.getString("District"));
-                item.setHouseNumber(rs.getString("Town"));
-                item.setDescription(rs.getString("Description"));
-            }
-            System.out.println(item);
-            return item;
-        } catch (SQLException ex) {
-            return null;
-        }
-    }
+		} catch (SQLException ex) {
+			return null;
+		}
 
-    @Override
-    public int post(Address t) {
-        String sql = "INSERT INTO address (city, district, town, description)"
-                + "VALUES(?,?,?,?);";
-        int key = -1;
-        try {
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, t.getCity());
-            ps.setString(2, t.getDistrict());
-            ps.setString(3, t.getHouseNumber());
-            ps.setString(4, t.getDescription());
+	}
 
-            int affectedRows = ps.executeUpdate();
+	@Override
+	public int post(Address t) {
+		String sql = "INSERT INTO address (City, District, Street, Description)" + "VALUES(?,?,?,?);";
+		int key = -1;
+		try {
+			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			ps.setString(1, t.getCity());
+			ps.setString(2, t.getDistrict());
+			ps.setString(3, t.getStreet());
+			ps.setString(4, t.getDescription());
 
-            if (affectedRows == 0) {
-                throw new SQLException("Creating user failed, no rows affected.");
-            }
+			int affectedRows = ps.executeUpdate();
 
-            try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    key = generatedKeys.getInt(1);
-                } else {
-                    throw new SQLException("Creating user failed, no ID obtained.");
-                }
-            }
-        } catch (SQLException ex) {
-            return key;
-        }
-        return key;
-    }
+			if (affectedRows == 0) {
+				throw new SQLException("Creating user failed, no rows affected.");
+			}
 
-    @Override
-    public void put(Address t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+			try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
+				if (generatedKeys.next()) {
+					key = generatedKeys.getInt(1);
+				} else {
+					throw new SQLException("Creating user failed, no ID obtained.");
+				}
+			}
+		} catch (SQLException ex) {
+			return key;
+		}
+		return key;
+	}
 
-    @Override
-    public void delete(Address t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+	@Override
+	public void put(Address t) {
+		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+																		// Tools | Templates.
+	}
+
+	@Override
+	public void delete(Address t) {
+		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+																		// Tools | Templates.
+	}
+
 }

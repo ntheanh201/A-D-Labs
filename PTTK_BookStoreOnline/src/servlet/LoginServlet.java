@@ -48,6 +48,7 @@ public class LoginServlet extends HttpServlet {
 			System.out.println(name);
 
 			httpSession.setAttribute("customerID", customerID);
+			httpSession.setAttribute("personID", p.getId());
 			httpSession.setAttribute("name", name);
 			httpSession.setAttribute("role", a.getRole());
 			

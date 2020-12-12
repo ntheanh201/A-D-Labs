@@ -11,7 +11,6 @@ public class Cart implements Serializable {
 	private Integer items;
 	private Item itemID;
 	private List<Item> itemList;
-	private List<OrderDetail> orderlineList;
 
 	public Cart() {
 	}
@@ -42,14 +41,6 @@ public class Cart implements Serializable {
 
 	public void setItemList(List<Item> itemList) {
 		this.itemList = itemList;
-	}
-
-	public List<OrderDetail> getOrderlineList() {
-		return orderlineList;
-	}
-
-	public void setOrderlineList(List<OrderDetail> orderlineList) {
-		this.orderlineList = orderlineList;
 	}
 
 	public Item getItemID() {

@@ -55,8 +55,8 @@
 		</div>
 		<div>
 			<span style="font-weight: bold">Shipping Information:</span> <span
-				style="color: firebrick">${shipadd.getAddressID().getDistrict()},
-				${shipadd.getAddressID().getHouseNumber()},
+				style="color: firebrick">${shipadd.getAddressID().getStreet()},
+				${shipadd.getAddressID().getDistrict()},
 				${shipadd.getAddressID().getCity()}</span>
 		</div>
 		<div>

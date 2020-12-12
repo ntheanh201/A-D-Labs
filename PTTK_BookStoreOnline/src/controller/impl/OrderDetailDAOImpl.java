@@ -92,6 +92,32 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
 		}
 		return list;
 	}
+	
+	public List<OrderDetail> getOrderLinesByUser(int customerID) {
+		List<OrderDetail> list = new ArrayList<>();
+		ItemDAOImpl aOImpl = new ItemDAOImpl();
+		String sql = "Select * from orderline, onlineorder where orderline.OrderID = onlineorder.OrderID AND onlineorder.customerID = ?";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, customerID);
+			ResultSet rs = ps.executeQuery();
+			// rs.first();
+			OnlineOrderDAOImpl onlineOrderDAOImpl = new OnlineOrderDAOImpl();
+			while (rs.next()) {
+				OrderDetail o = new OrderDetail();
+				o.setId(rs.getInt("ID"));
+				o.setItemID(aOImpl.get(rs.getInt("ItemID")));
+				o.setOrderID(onlineOrderDAOImpl.get(rs.getInt("OrderID")));
+				o.setQuantity(rs.getInt("Quantity"));
+				System.out.println(o);
+				list.add(o);
+			}
+
+		} catch (SQLException ex) {
+			Logger.getLogger(OrderDetailDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		return list;
+	}
 
 	@Override
 	public int post(OrderDetail t) {

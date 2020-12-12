@@ -73,4 +73,10 @@ public class OnlineOrder implements Serializable {
 		this.shippingAddressID = shippingAddressID;
 	}
 
+	@Override
+	public String toString() {
+		return "OnlineOrder [state=" + state + ", customerID=" + customerID + ", orderID=" + orderID + ", shippingID="
+				+ shippingID + ", paymentmethod=" + paymentmethod + ", shippingAddressID=" + shippingAddressID + "]";
+	}
+
 }

@@ -17,10 +17,6 @@
         <servlet-class>servlet.ImageServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ShippingAddressServlet</servlet-name>
-        <servlet-class>servlet.ShippingAddressServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>createOrder</servlet-name>
         <servlet-class>servlet.CreateOrderServlet</servlet-class>
     </servlet>
@@ -43,10 +39,6 @@
     <servlet-mapping>
         <servlet-name>ImageServlet</servlet-name>
         <url-pattern>/img</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ShippingAddressServlet</servlet-name>
-        <url-pattern>/addShippingAddress</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>createOrder</servlet-name>

@@ -18,6 +18,14 @@ public class FullName implements Serializable {
 	public FullName(Integer id) {
 		this.id = id;
 	}
+	
+
+	public FullName(String firstName, String middleName, String lastName) {
+		super();
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+	}
 
 	public Integer getId() {
 		return id;

@@ -26,7 +26,6 @@ import model.Person;
 
 public class RegisterServlet extends HttpServlet {
 
-
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -37,39 +36,33 @@ public class RegisterServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		AccountDAOImpl accountDAOImpl = new AccountDAOImpl();
-		Account account = new Account();
-		
-		account.setUsername(request.getParameter("username"));
-		account.setPassword(request.getParameter("password"));
-		account.setRole("customer");
+		Account account = new Account(request.getParameter("username"), request.getParameter("password"), "customer");
 
 		FullnameDAOImpl fullnameDAOImpl = new FullnameDAOImpl();
-		FullName fullname = new FullName();
-		fullname.setFirstName(request.getParameter("firstname"));
-		fullname.setMiddleName(request.getParameter("middlename"));
-		fullname.setLastName(request.getParameter("lastname"));
+		FullName fullname = new FullName(request.getParameter("firstName"), request.getParameter("middleName"),
+				request.getParameter("lastName"));
 
 		AddressDAOImpl addressDAOImpl = new AddressDAOImpl();
 		Address address = new Address();
 		address.setCity(request.getParameter("city"));
 		address.setDistrict(request.getParameter("district"));
-		address.setHouseNumber(request.getParameter("houseNumber"));
-		address.setDescription(request.getParameter("description"));
+		address.setStreet(request.getParameter("street"));
+//		address.setDescription(request.getParameter("description"));
 
 		ContactInforDAOImpl contactInforDAOImpl = new ContactInforDAOImpl();
-		ContactInfor contactinfor = new ContactInfor();
-		contactinfor.setEmail(request.getParameter("email"));
-		contactinfor.setPhoneNumber(request.getParameter("phonenumber"));
+		ContactInfor contactinfor = new ContactInfor(request.getParameter("email"),
+				request.getParameter("phoneNumber"));
 
 		PersonDAOImpl personDAOImpl = new PersonDAOImpl();
+		
 		Person person = new Person();
 		person.setGender(request.getParameter("gender"));
-		person.setDateOfBirth(request.getParameter("dateofbirth"));
-		System.out.println(request.getParameter("dateofbirth"));
-		System.out.println(person.getDateOfBirth());
-		person.setIdCard(request.getParameter("idcard"));
+		person.setDateOfBirth(request.getParameter("dateOfBirth"));
+//		System.out.println(request.getParameter("dateOfBirth"));
+//		System.out.println(person.getDateOfBirth());
+
 		if (accountDAOImpl.checkUsernameExist(account.getUsername())) {
 			request.setAttribute("message", "Username existed");
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/register.jsp");
@@ -90,12 +83,12 @@ public class RegisterServlet extends HttpServlet {
 			person.getAccountID().setId(accountID);
 			person.getContactInforID().setId(contactinforID);
 			person.getFullNameID().setId(fullnameID);
-			System.out.println(person.toString());
+//			System.out.println(person.toString());
 
 			int personID = personDAOImpl.post(person);
-
+			System.out.println(personID);
 			int cartID = new CartDAOImpl().post(new Cart());
-
+			System.out.println(cartID);
 			CustomerDAOImpl customerDAOImpl = new CustomerDAOImpl();
 			Customer customer = new Customer();
 			customer.setPersonID(personID);
@@ -103,10 +96,11 @@ public class RegisterServlet extends HttpServlet {
 			customer.getCartID().setId(cartID);
 
 			customerDAOImpl.post(customer);
-			
-			request.setAttribute("message", "Register successfully. Login!");
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/login.jsp");
-			requestDispatcher.forward(request, response);
+
+//			request.setAttribute("message", "Register successfully. Login!");
+			response.sendRedirect("./login");
+//			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/login.jsp");
+//			requestDispatcher.forward(request, response);
 		}
 	}
 }

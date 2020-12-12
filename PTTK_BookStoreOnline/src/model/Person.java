@@ -9,7 +9,6 @@ public class Person implements Serializable {
 	private Integer id;
 	private String dateOfBirth;
 	private String gender;
-	private String idCard;
 	private Employee employee;
 	private Account accountID;
 	private ContactInfor contactInforID;
@@ -46,14 +45,6 @@ public class Person implements Serializable {
 
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	public String getIdCard() {
-		return idCard;
-	}
-
-	public void setIdCard(String idCard) {
-		this.idCard = idCard;
 	}
 
 	public Employee getEmployee() {
@@ -94,5 +85,12 @@ public class Person implements Serializable {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", employee=" + employee
+				+ ", accountID=" + accountID + ", contactInforID=" + contactInforID + ", fullNameID=" + fullNameID
+				+ ", customer=" + customer + "]";
 	}
 }

@@ -3,10 +3,12 @@ package controller.impl;
 
 import static controller.BaseDAO.con;
 
+import java.math.BigInteger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -14,6 +16,7 @@ import java.util.logging.Logger;
 
 import controller.CartDAO;
 import model.Cart;
+import model.CartItem;
 
 public class CartDAOImpl implements CartDAO {
 
@@ -63,14 +66,12 @@ public class CartDAOImpl implements CartDAO {
 
 	@Override
 	public void put(Object t) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
 	public void delete(Object t) {
-		throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-																		// Tools | Templates.
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 	@Override
@@ -85,6 +86,33 @@ public class CartDAOImpl implements CartDAO {
 			ps.executeUpdate();
 		} catch (SQLException ex) {
 			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
+	
+	public List<CartItem> getCartInfor(int personID) {
+		String sql = "SELECT * FROM item, customer, cart, cart_item " + "WHERE customer.PersonID = ? "
+				+ "AND customer.CartID = cart.ID " + "AND cart.ID = cart_item.CartID "
+				+ "AND cart_item.ItemID = item.ID ORDER BY item.Name";
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, personID);
+
+			ResultSet rs = ps.executeQuery();
+			List<CartItem> items = new ArrayList<>();
+			while (rs.next()) {
+				CartItem item = new CartItem();
+				item.setId(rs.getInt("item.ID"));
+				item.setName(rs.getString("name"));
+				item.setDescription(rs.getString("description"));
+				item.setSalePrice(BigInteger.valueOf(rs.getLong("saleprice")));
+				item.setUrl(rs.getString("url"));
+				item.setQuantity(rs.getInt("cart_item.quantity"));
+				items.add(item);
+			}
+			return items;
+		} catch (SQLException ex) {
+			Logger.getLogger(AccountDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+			return null;
 		}
 	}
 

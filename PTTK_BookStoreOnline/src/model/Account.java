@@ -4,50 +4,57 @@ import java.io.Serializable;
 
 public class Account implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
-    private Integer id;
-    private String username;
-    private String password;
-    private String role;
+	private static final long serialVersionUID = 1L;
 
-    public Account() {
-    }
+	private Integer id;
+	private String username;
+	private String password;
+	private String role;
 
-    public Account(Integer id) {
-        this.id = id;
-    }
+	public Account() {
+	}
 
-    public Integer getId() {
-        return id;
-    }
+	public Account(String username, String password, String role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public Account(Integer id) {
+		this.id = id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getRole() {
-        return role;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setRole(String role) {
-        this.role = role;
-    }
-    
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 }
