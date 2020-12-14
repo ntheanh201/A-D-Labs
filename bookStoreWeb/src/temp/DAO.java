@@ -20,7 +20,7 @@ public class DAO {
 	public DAO() {
 		try {
 			String connectString = "jdbc:mysql://localhost:3306/bookstore?useSSL=false&allowPublicKeyRetrieval=true";
-	        Class.forName("com.mysql.jdbc.Driver");
+	        Class.forName("com.mysql.cj.jdbc.Driver");
 	        connection = (Connection) DriverManager.getConnection(connectString, "root", "root");
 		}
 		catch (Exception e) {

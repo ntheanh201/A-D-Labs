@@ -22,7 +22,7 @@ public class DBConnection {
 			}
 		}
 		if (connect == null) {
-			String url = "jdbc:mysql://localhost:3306/book_store";
+			String url = "jdbc:mysql://localhost:3306/book_store?useSSL=false&allowPublicKeyRetrieval=true";
 			try {
 				connect = DriverManager.getConnection(url, "root", "root");
 			} catch (SQLException e) {
